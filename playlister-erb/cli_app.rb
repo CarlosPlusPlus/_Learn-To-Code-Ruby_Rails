@@ -4,7 +4,7 @@ require_relative 'environment'
 
 class CLIPlaylisterApp
   def run
-    parser = LibraryParser.new('/Users/avi/Development/code/playlister-rb/data')
+    parser = LibraryParser.new('./data')
     parser.call
 
     puts "Welcome to the playlist!!!"
