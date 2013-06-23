@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Test to Learn</h1>
+					<h3>Aidan Feldman</h3>
+					<p>
+						<small><a href="http://api.afeld.me">api.afeld.me</a> / <a href="http://twitter.com/aidanfeldman">@aidanfeldman</a></small>
+					</p>
+					<p><a href="https://github.com/afeld/test_to_learn">github.com/afeld/test_to_learn</a></p>
+				</section>
+
+				<section data-background="http://3.bp.blogspot.com/_59TdlP1XdGk/TOR66Ta34TI/AAAAAAAAOVw/TLylr7tMGys/s1600/radioflyer.jpg">
+					<h2 class="fragment" style="padding: 0.4em; background-color:rgba(0,0,0,0.8)"><span style="padding:0 10px; border:10px solid white">&#x2713;</span> learned by testing</h2>
+				</section>
+
+				<section>
+					<h2>part of getting better...</h2>
+					<p class="fragment">is overcoming the fear of breaking things</p>
+				</section>
+
+				<section data-background="http://blog.aicr.org/wp-content/uploads/2012/05/bigstock-D-Red-reset-button-on-white-26360654.jpg">
+				</section>
+
+				<section>
+					<h2>mitigate risk</h2>
+					<ul>
+						<li class="fragment">history (e.g. version control)</li>
+						<li class="fragment">abstraction</li>
+						<li class="fragment">testing</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>flavors of testing</h2>
+					<ul>
+						<li>unit</li>
+						<li>integration</li>
+						<li><em>etc.</em></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>unit testing:</h2>
+					<p>test a piece in isolation</p>
+				</section>
+
+				<section>
+					<h2>integration testing:</h2>
+					<p>test a bunch of pieces together</p>
+				</section>
+
+				<section>
+					<h2>the way i think about it:</h2>
+				</section>
+
+				<section>
+					<h2>unit testing:</h2>
+					<p>test a piece in isolation</p>
+				</section>
+
+				<section>
+					<h2>unit testing:</h2>
+					<p>test a piece <span style="color:#e7ad52">[and everything below it]</span> in isolation</p>
+				</section>
+
+				<section>
+					<h2>testing is an art</h2>
+					<img width="690" height="473" src="http://blog.arlomidgett.com/wp-content/arlo-midgett-photo-daisy2.jpg"/>
+					<h3 class="fragment">not a science</h3>
+				</section>
+
+				<section>
+					<p>( group exercise )</p>
+				</section>
+
+				<section>
+					<h2>teasting leads to...</h2>
+					<ul>
+						<li class="fragment">writing things to be testable</li>
+						<li class="fragment">breaking into smaller pieces</li>
+						<li class="fragment">coding from the outside in (the UX perspective)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>writing tests forces better code</h1>
+				</section>
+
+				<section>
+					<img width="640" height="469" src="http://i.neoseeker.com/mgv/60953/953/126/fluttershy_yay_by_zutheskunkd3e8usb_display.png"/>
+				</section>
+
+				<section>
+					<h1>fin.</h1>
+					<h3><a href="http://api.afeld.me">api.afeld.me</a> / <a href="http://twitter.com/aidanfeldman">@aidanfeldman</a></h3>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: 'night', // available themes are in /css/theme
+				transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					// { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
