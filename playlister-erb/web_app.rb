@@ -33,9 +33,6 @@ module WebApp
 
       b = binding
       html = template.result(b)
-      # define my erb template
-      # generate my ERB template with all the artists
-      # and send back as the content
 
       [200, {'Content-Type' => 'text/html'}, [html]]
     end
@@ -47,6 +44,13 @@ module WebApp
     end
 
     def call(env)
+      songs = Song.all
+      template = ERB.new(File.read('views/songs.erb'))
+
+      b = binding
+      html = template.result(b)
+
+      [200, {'Content-Type' => 'text/html'}, [html]]
     end
   end
 
@@ -56,6 +60,13 @@ module WebApp
     end
 
     def call(env)
+      genres = Genre.all
+      template = ERB.new(File.read('views/genres.erb'))
+
+      b = binding
+      html = template.result(b)
+
+      [200, {'Content-Type' => 'text/html'}, [html]]
     end
   end
 

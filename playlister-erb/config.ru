@@ -22,4 +22,4 @@ app = Rack::URLMap.new(
 )
 
 # use WebApp::Artists, :urls => ['/artists']
-run Rack::Handler::WEBrick.run(app, {:Port => 3000})
+run Rack::Handler::WEBrick.run(app, {:Port => 1337})

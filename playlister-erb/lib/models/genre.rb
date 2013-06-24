@@ -7,6 +7,10 @@ class Genre
 
   include Memorable::InstanceMethods
 
+  def url
+    "#{self.name}.html"
+  end
+
   def self.action(index)
     self.all[index-1].list_songs
   end
