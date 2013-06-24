@@ -1,0 +1,6 @@
+<h1>Music Library</h1>
+<ol>
+  <% Artist.all.each do |artist| %>
+    <li><a href="<%= "artists/#{artist.name.downcase}.html" %>"><%= artist.name %></a> - Songs: <%= artist.songs_count %></li>
+  <% end %>
+</ol>

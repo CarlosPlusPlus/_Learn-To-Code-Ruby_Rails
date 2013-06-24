@@ -1,0 +1,5 @@
+<h1>  <%=@song.name%></h1>
+<br>
+Artist: <a href="<%="../artists/#{@song.artist.name.downcase}.html"%>"><%=@song.artist.name%></a>
+<br><br>
+Genre: <a href="<%="../genres/#{@song.genre.name.downcase}.html"%>"><%=@song.genre.name%></a>

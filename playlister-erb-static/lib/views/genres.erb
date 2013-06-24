@@ -1,0 +1,7 @@
+<h1><%=@genre.name%></h1>
+<h3>Artists:</h3>
+<ol>
+    <% @genre.artists.each do |artist|%>
+    <li><a href="<%="../artists/#{artist.name.downcase}.html"%>"><%=artist.name%></a></li>
+    <%end%>
+</ol>
