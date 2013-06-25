@@ -1,0 +1,14 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <h1>List of all the students:</h1>
+
+    <ul>
+      <% @students.each_with_index do |student,index| %>
+        <h4><em><a href="students/<%= index+1 %>"><%=student%></em></h4>
+      <% end %>
+    </ul>
+
+  </body>
+</html>
