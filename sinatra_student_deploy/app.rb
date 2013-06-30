@@ -31,7 +31,7 @@ module StudentSite
     #   erb :artists
     # end
 
-    get '/students' do
+    get '/' do
       @students = Student.all
 
       erb :'/students/students'
@@ -47,10 +47,6 @@ module StudentSite
       @bio      = student_info[7]
       @twitter  = student_info[3]
       @quote    = student_info[6]
-
-      puts "student_info is: #{student_info}"
-
-      puts "NAME = #{@name}"
 
       erb :'/students/profile'
     end
