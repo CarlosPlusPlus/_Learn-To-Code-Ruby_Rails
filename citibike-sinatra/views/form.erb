@@ -1,0 +1,23 @@
+<h1>MAP MY BIKE ROUTE</h1>
+
+<form action = "/map" method="POST">
+
+  <p>Start:</p>
+  <select name="start">
+    <% @data.each do |station| %>
+      <option value="<%=[(station["lat"].to_f/1000000),(station["lng"].to_f/1000000)]%>"><%=station["name"]%></option>
+    <%end%>
+  </select>
+  
+  <p>End:</p>
+  <select name="end">
+    <% @data.each do |station| %>
+      <option value="<%=[(station["lat"].to_f/1000000),(station["lng"].to_f/1000000)]%>"><%=station["name"]%></option>
+    <%end%>
+  </select>
+  
+  <br>
+
+  <input type="submit" value="Submit">
+
+</form>
