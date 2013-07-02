@@ -1,7 +1,7 @@
 class Station
   include DataMapper::Resource 
   
-  property :id, Serial
+  property :id, Integer
   property :stationName, Text
   property :availableDocks, Integer
   property :totalDocks, Integer
@@ -17,7 +17,7 @@ class Station
   property :location, Text
   property :altitude, Float
   property :testStation, Text
-  property :lastCommunicationTime, DateTime
+  property :lastCommunicationTime, Text
   property :landMark, Text
 
 end

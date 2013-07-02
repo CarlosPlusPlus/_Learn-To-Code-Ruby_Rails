@@ -1,8 +1,6 @@
-DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/source/stations.db")
-
 module Citibike
   class App < Sinatra::Application 
-  
+
   # before do
   #   json = File.open("data/citibikenyc.json").read
   #   @data = MultiJson.load(json)
@@ -64,7 +62,7 @@ module Citibike
     end
   end
 
-  DataMapper.auto_upgrade!
+  # DataMapper.auto_upgrade!
 
   end
 

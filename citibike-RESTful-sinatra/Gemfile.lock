@@ -74,6 +74,7 @@ PLATFORMS
 DEPENDENCIES
   data_mapper
   dm-sqlite-adapter
+  json
   multi_json
   shotgun
   sinatra
