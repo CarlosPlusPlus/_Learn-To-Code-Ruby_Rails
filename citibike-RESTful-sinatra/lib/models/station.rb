@@ -1,24 +1,24 @@
+puts "STATION is loaded from: #{File.dirname(__FILE__)}"
+
 class Station
   include DataMapper::Resource 
-  
-  property :id, Integer
+
+  property :id, Serial
   property :stationName, Text
   property :availableDocks, Integer
   property :totalDocks, Integer
   property :latitude, Float
   property :longitude, Float
-  property :statusValue, Text
+  property :statusValue, String
   property :statusKey, Integer
-  property :availableBikes, Integer 
-  property :stAddress1, Text
-  property :stAddress2, Text
-  property :city, Text
-  property :postalCode, Text 
-  property :location, Text
-  property :altitude, Float
-  property :testStation, Text
-  property :lastCommunicationTime, Text
-  property :landMark, Text
-
+  property :availableBikes, Integer
+  property :stAddress1, String
+  property :stAddress2, String
+  property :city, String
+  property :postalCode, String
+  property :location, String
+  property :altitude, String
+  property :testStation, Boolean
+  property :lastCommunicationTime, DateTime
+  property :landMark, String
 end
-

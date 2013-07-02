@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'sinatra'
-gem 'multi_json'
 gem 'data_mapper'
 gem 'dm-sqlite-adapter'
 gem 'json'
+gem 'rubygems'
+gem 'sinatra'
 
 group :development do
   gem 'shotgun'

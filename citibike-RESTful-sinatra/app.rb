@@ -1,40 +1,29 @@
+puts "APP is loaded from: #{File.dirname(__FILE__)}"
+
 require 'rubygems'
-require 'bundler'
+require 'sinatra'
 
-Bundler.require
+require 'data_mapper'
+require 'dm-sqlite-adapter'
+require 'json'
+require 'open-uri'
 
-Dir.glob('./lib/*.rb') do |model|
-  require model
-end
+require './environment'
+
+DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/stations.db")
 
 module Citibike
 	class App < Sinatra::Application
-  #   before do
-  #     json = File.open("data/citibikenyc.json").read
-  #     @data = MultiJson.load(json)
-  #   end
+  
+    # ROUTES GO HERE
 
-  #   get '/' do
-  #     erb :home
-  #   end
+    helpers do
+      def partial(view)
+        erb view, :layout => false
+      end
+    end
 
-  #   get '/form' do
-  #     erb :form
-  #   end
+    DataMapper.auto_upgrade!
 
-  #   post '/form' do
-  #     @start = params["start"]
-  #     @end   = params["end"]
-
-  #     "You chose #{@start} and #{@end}!"
-  #   end
-
-  #   post '/map' do
-  #     @start = params["start"]
-  #     @end   = params["end"]
-
-  #     erb :map
-  #   end
-
-  # end
+  end
 end
