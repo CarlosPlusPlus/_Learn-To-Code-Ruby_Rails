@@ -6,6 +6,8 @@ gem 'json'
 gem 'sqlite3'
 gem 'rake'
 gem 'typhoeus'
+gem 'debugger'
+gem "debugger-pry", :require => "debugger/pry"
 
 gem 'activerecord'
 gem 'sinatra-activerecord'

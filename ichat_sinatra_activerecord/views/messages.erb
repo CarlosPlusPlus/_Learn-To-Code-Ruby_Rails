@@ -4,9 +4,18 @@
     <title></title>
   </head>
   <body>
-    <div>
 
+    <% @messages.each_with_index do |msg,index| %>
+    
+    <div>
+      <h1>Message <%= index + 1%></h1>
+      From: <%= msg.sender %>     <br>
+      To: <%= msg.receiver %>     <br>
+      Message: <%= msg.content %> <br>
     </div>
+
+    <% end %>
+    <br>
     <a href="/reset"><b>DELETE ALL MESSAGES</b></a>
   </body>
 </html>
