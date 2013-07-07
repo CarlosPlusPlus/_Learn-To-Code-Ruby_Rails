@@ -17,7 +17,7 @@
   <%= javascript_include_tag "chirp.min" %>
 
   <%= csrf_meta_tags %>
-  
+
 </head>
 
 <body class="home page students">
@@ -80,17 +80,8 @@
 
     <!-- Begin Content -->
     <div class="container">
-
-      <!-- Begin Title Content -->
-      <div class="page-title">
-        <h2>Every Story Has Heroes</h2>
-        <h3>We're 32 people on a journey to learn to love code.</h3>
-      </div>
-      <!-- End Title Content -->
-
-    <%= yield %>
-
-  </div>
+      <%= yield %>
+    </div>
 
   <!-- Begin Footer -->
   <div class="footer">
@@ -103,12 +94,10 @@
   </div>
   <!-- End Footer -->
 
-  <script type='text/javascript'>var custom_js_vars={"flexslider_auto":"enabled"};</script>
-  <script type='text/javascript' src="js/custom.js"></script>
-  <script type='text/javascript' src="js/jquery.flexslider.js"></script>
-  <script type='text/javascript' src="js/jquery.tabs.min.js"></script>
-  <script type='text/javascript' src="js/jquery.fitvids.js"></script>
-  <script type='text/javascript' src="js/jquery.mobilemenu.js"></script>
+  <%= javascript_include_tag "jquery.flexslider" %>
+  <%= javascript_include_tag "jquery.tabs.min" %>
+  <%= javascript_include_tag "jquery.fitvids" %>
+  <%= javascript_include_tag "jquery.mobilemenu" %>
 
   <script type="text/javascript">
 
