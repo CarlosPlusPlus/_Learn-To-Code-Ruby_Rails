@@ -40,8 +40,8 @@ class StudentScrape
     self.doc.search('li#text-7 div.textwidget h3').text.strip
   end
 
-  def tagline
-
+  def bio
+    self.doc.search('#equalize #ok-text-column-2 .services p').text.strip
   end
 
   def self.student_urls
