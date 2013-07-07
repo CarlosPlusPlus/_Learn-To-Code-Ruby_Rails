@@ -1,55 +1,39 @@
-<% @students.each do |student| %>
-<li class="home-blog-post">
-  <div class="blog-thumb">
-    <img width="360" height="140" src="http://placekitten.com/360/140" class="attachment-blog-thumb wp-post-image" alt="">
+<div id="random-full-width-content" class="this-div-is-just-a-helpful-container">
+  <div class="section section-services student-index">
+    <div class="section-title">
+      <span>Flatiron School Class 002</span>
+    </div>
   </div>
 
-  <div class="blog-title">
-    <div class="big-comment"><h3><a href="students/<%= student.id %>"><%= student.name %></a></h3></div>
-    <p class="home-blog-post-meta">Hysterical Tag Line</p>
+  <div class="section section-blog">
+    <div class="home-blog clearfix">
+      <ul>
+        
+        <% @students.each do |student| %>
+          <li class="home-blog-post">
+
+            <div class="blog-thumb">
+              <img width="360" height="140" src="http://placekitten.com/360/140" class="attachment-blog-thumb wp-post-image" alt="">
+            </div>
+
+            <div class="blog-title">
+              <div class="big-comment"><h3><a href="students/<%= student.id %>"><%= student.name %></a></h3></div>
+              <p class="home-blog-post-meta">Hysterical Tag Line</p>
+            </div>
+            <div class="clear"></div>
+
+            <div class="excerpt">
+              <p>This is an excerpt!</p>
+            </div>
+            <div class="clear"></div>
+          </li>
+        <% end %>
+
+      </ul>
+    </div>
   </div>
-  <div class="clear"></div>
 
-  <div class="excerpt">
-    <p>Jack's Excerpt.</p>
-  </div>
-  <div class="clear"></div>
-</li>
-<% end %>
-
-<h1>Listing students</h1>
-
-<!-- <table>
-  <tr>
-    <th>Name</th>
-    <th>Tagline</th>
-    <th>Bio</th>
-    <th>Treehouse profile</th>
-    <th>Linkedin</th>
-    <th>Twitter</th>
-    <th>Github</th>
-    <th>Quote</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @students.each do |student| %>
-  <tr>
-    <td><%= student.name %></td>
-    <td><%= student.tagline %></td>
-    <td><%= student.bio %></td>
-    <td><%= student.treehouse_profile %></td>
-    <td><%= student.linkedin %></td>
-    <td><%= student.twitter %></td>
-    <td><%= student.github %></td>
-    <td><%= student.quote %></td>
-    <td><%= link_to 'Show', student %></td>
-    <td><%= link_to 'Edit', edit_student_path(student) %></td>
-    <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table> -->
+</div>
 
 <br>
 
