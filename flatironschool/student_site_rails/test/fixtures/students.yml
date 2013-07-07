@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyText
+  tagline: MyText
+  bio: MyText
+  treehouse_profile: MyText
+  linkedin: MyText
+  twitter: MyText
+  github: MyText
+  quote: MyText
+
+two:
+  name: MyText
+  tagline: MyText
+  bio: MyText
+  treehouse_profile: MyText
+  linkedin: MyText
+  twitter: MyText
+  github: MyText
+  quote: MyText
