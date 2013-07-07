@@ -8,12 +8,14 @@
   <div class="section section-blog">
     <div class="home-blog clearfix">
       <ul>
-        
+
         <% @students.each do |student| %>
           <li class="home-blog-post">
 
             <div class="blog-thumb">
-              <img width="360" height="140" src="http://placekitten.com/360/140" class="attachment-blog-thumb wp-post-image" alt="">
+              <a href="students/<%= student.id %>">
+                <img width="360" height="140" src="http://placekitten.com/360/140" class="attachment-blog-thumb wp-post-image" alt="">
+              </a>
             </div>
 
             <div class="blog-title">
