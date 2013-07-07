@@ -1,0 +1,154 @@
+.ib_main_header {
+  padding: 0;
+  margin-top: 30px;
+  font-size: 40px;
+}
+
+.student_pic {
+  border-radius: 100px;
+  web-kit border-radius: 100px;
+  moz border-radius: 100px;
+  width: 140px;
+  height: 140px;
+  top: -212px;
+  left: 41.07%;
+  border: 2px solid white;
+  margin-top: 205px;
+}
+
+
+.page-title, .top-page-title {
+  margin-bottom: 0;
+  padding: 0;
+  height: 275px;
+  text-align: bottom;
+}
+
+.page-title {
+  position: relative;
+  vertical-align:bottom;
+}
+
+.top-page-title {
+  background: url(../img/fall.jpg) no-repeat top center;
+  background-size: 100% 100%;
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+.ib-social-icons {
+  font-size: 40px;
+  padding: 0 10px;
+}
+
+.social-icons {
+  padding:20px 0; 
+}
+
+.title-div {
+  background: white;
+  width: 500px;
+  margin: 0 auto;
+  position: relative;
+  top: 20px;
+}
+
+.icon-twitter:hover {
+  color: #06ADE8;
+}
+
+.icon-linkedin-sign:hover {
+  color: #1F83B9;
+}
+
+.icon-github:hover {
+  color: black;
+}
+
+.icon-edit:hover {
+  color: #FFCC00;
+}
+
+.icon-rss:hover {
+  color: #009933;
+}
+
+.link-subs {
+  padding-top: 10px;
+}
+
+.link-subs li{
+  display: inline;
+}
+
+.link-subs ul {
+  text-align: center;
+}
+
+.link-subs ul a:hover {
+  color: #37C5FD;
+}
+
+.section-testimonials-curriculum {
+    padding-top: 40px;
+    padding-bottom: 50px;
+}
+
+.quote-div {
+  padding: 15px 0;
+}
+
+.testimonials h3 {
+  font-size: 16px;
+  line-height: 140%;
+}
+
+.section-title {
+    letter-spacing: 5px;
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    /*margin-bottom: 40px;*/
+    text-align: center;
+    padding-top: 35px;
+    border-top: solid 1px #eee;
+    border-bottom: solid 1px #eee;
+}
+
+.services h3 {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 20px;
+    margin-bottom: 0;
+    text-align: center;
+    width: 295px;
+}
+
+.services first-child {
+    width: 100%;
+    padding-top: none;
+    border-top: none;
+}
+
+.services {
+  width: 100%;
+}
+
+.go-to-top {
+  text-align: right;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.about-text {
+  width: 500px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 20px;
+  line-height: 130%;
+  border-top: none;
+
+}

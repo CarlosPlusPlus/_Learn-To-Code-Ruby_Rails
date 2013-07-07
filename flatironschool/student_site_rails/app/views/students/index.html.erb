@@ -1,3 +1,22 @@
+<% @students.each do |student| %>
+<li class="home-blog-post">
+  <div class="blog-thumb">
+    <img width="360" height="140" src="http://placekitten.com/360/140" class="attachment-blog-thumb wp-post-image" alt="">
+  </div>
+
+  <div class="blog-title">
+    <div class="big-comment"><h3><a href="students/<%= student.name %>.php"><%= student.name %></a></h3></div>
+    <p class="home-blog-post-meta">Hysterical Tag Line</p>
+  </div>
+  <div class="clear"></div>
+
+  <div class="excerpt">
+    <p>Jack's Excerpt.</p>
+  </div>
+  <div class="clear"></div>
+</li>
+<% end %>
+
 <h1>Listing students</h1>
 
 <table>

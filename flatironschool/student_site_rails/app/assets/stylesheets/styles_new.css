@@ -1,0 +1,15 @@
+.content img {
+    float:left;
+	margin-right:2%;
+	border:1px solid #ccc;
+}
+.content {
+width:90%;
+}
+
+.social_icons ul li{
+list-style-type:none;
+border:1px solid red;
+width:50px;
+height:50px;
+}
