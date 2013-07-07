@@ -1,14 +1,137 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
-  <title>StudentSiteRails</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+  <meta charset="UTF-8" />
+  <meta name="viewport" content ="width=device-width, minimum-scale=1.0, initial-scale=1.0">
+
+  <title>The Flatiron School</title>
+
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
 
-<%= yield %>
+<body class="home page students">
+  <!-- Begin Main Wrapper -->
+  <div class="main-wrapper">
+    <!-- Begin Header -->
+    <div class="header-wrapper">
+      <div class="header">
+        <div class="header-left">
+          <h1 class="logo-text">
+            <a href="/" title="The Flatiron School">
+              <%=image_tag "the-flatiron-school-logo-sm-black.png", :class => "logo"%>
+            </a>
+          </h1>
+        </div>
+        <div class="header-right">
+          <div class="menu-header-container">
+            <ul id="nav" class="nav">
+              <li class="menu-item">
+                <a href="http://flatironschool.com/index.html">Home</a>
+              </li>
+              <li>
+                <a href="program.html">The Program</a>
+                <ul class="sub-menu">
+                  <li><a href="http://flatironschool.com/program.html">Basics</a></li>
+                  <li><a href="http://flatironschool.com/curriculum.html">Curriculum</a></li>
+                  <li><a href="http://flatironschool.com/faculty.html">Faculty</a></li>
+                  <li><a href="http://flatironschool.com/speakers.html">Guest Speakers</a></li>
+                  <li><a href="http://flatironschool.com/faq.html">FAQ</a></li>
+                  <li><a href="http://prework.flatironschool.com">Our Prework</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">The School</a>
+
+                <ul class="sub-menu">
+                  <li><a href="http://flatironschool.com/events.html">Events</a></li>
+                  <li><a href="http://flatironschool.com/contact.html">Contact</a></li>
+                  <li><a href="http://students.flatironschool.com/">Students</a></li>
+                </ul>
+
+              </li>
+              <li><a href="http://info.flatironschool.com/summer-2013-application"><font color="#26c4ff">Apply</font></a>
+              </li>
+              <li>
+                <a href="http://flatironschool.com/employers.html">Employers</a>
+              </li>
+              <li>
+                <a href="http://blog.flatironschool.com/">Blog</a>
+              </li>
+              <li><a href="http://highschool.flatironschool.com/" target="_blank">High School</a></li>
+            </ul>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <!-- End Header -->
+
+    <!-- Begin Content -->
+    <div class="container">
+
+      <!-- Begin Title Content -->
+      <div class="page-title">
+        <h2>Every Story Has Heroes</h2>
+        <h3>We're 32 people on a journey to learn to love code.</h3>
+      </div>
+      <!-- End Title Content -->
+
+    <%= yield %>
+
+  </div>
+
+  <!-- Begin Footer -->
+  <div class="footer">
+    <div class="footer-text">
+      <div class="footer-text-right">
+        <div class="copyright">&copy; 2013. The Flatiron School.  All Your Rights Are Belong To Us.</div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <!-- End Footer -->
+
+  <script type='text/javascript'>var custom_js_vars={"flexslider_auto":"enabled"};</script>
+  <script type='text/javascript' src="js/custom.js"></script>
+  <script type='text/javascript' src="js/jquery.flexslider.js"></script>
+  <script type='text/javascript' src="js/jquery.tabs.min.js"></script>
+  <script type='text/javascript' src="js/jquery.fitvids.js"></script>
+  <script type='text/javascript' src="js/jquery.mobilemenu.js"></script>
+
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-33578770-1']);
+    _gaq.push(['_setDomainName', 'flatironschool.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+
+  <!-- Start of Async HubSpot Analytics Code -->
+  <script type="text/javascript">
+  (function(d,s,i,r) {
+
+      if (d.getElementById(i)){return;}
+
+      var n=d.createElement(s),e=d.getElementsByTagName(s)[0];
+
+      n.id=i;n.src='//js.hubspot.com/analytics/'+(Math.ceil(new Date()/r)*r)+'/69751.js';
+
+      e.parentNode.insertBefore(n, e);
+
+  })(document,"script","hs-analytics",300000);
+  </script>
+  <!-- End of Async HubSpot Analytics Code -->
 
 </body>
 </html>
