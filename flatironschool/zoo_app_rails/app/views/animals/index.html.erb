@@ -1,0 +1,34 @@
+<h1>Animals for <%= @zoo.name %> </h1>
+
+<% if @zoo.animals.count > 0 %>
+
+  <table>
+    <tr>
+      <th>Species</th>
+      <th>Count</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+  <% @zoo.animals.each do |animal| %>
+    <tr>
+      <td><%= animal.species %></td>
+      <td><%= animal.count %></td>
+      <td><%= link_to 'Show', [@zoo,animal] %></td>
+      <td><%= link_to 'Edit', edit_zoo_animal_path(@zoo,animal) %></td>
+      <td><%= link_to 'Destroy', [@zoo,animal], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </table>
+
+<% else %>
+
+  <p><%= @zoo.name %> doesn't have any animals yet!</p>
+
+<% end %>
+
+<br />
+
+<%= link_to 'New Animal', new_zoo_animal_path(@zoo) %>
+<%= link_to 'Back', @zoo %>

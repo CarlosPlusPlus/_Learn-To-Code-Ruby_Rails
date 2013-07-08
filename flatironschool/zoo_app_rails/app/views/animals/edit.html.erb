@@ -1,0 +1,6 @@
+<h1>Editing animal for <%= @zoo.name %></h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', [@zoo, @animal] %> |
+<%= link_to 'Back', zoo_animals_path(@zoo) %>

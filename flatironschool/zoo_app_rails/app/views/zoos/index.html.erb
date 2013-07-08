@@ -1,0 +1,39 @@
+<h1>Listing zoos</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Species</th>
+    <th>Count</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @zoos.each do |zoo| %>
+  <tr>
+    <td><%= zoo.name %></td>
+    <td></td>
+    <td></td>
+    <td><%= link_to 'Show', zoo %></td>
+    <td><%= link_to 'Edit', edit_zoo_path(zoo) %></td>
+    <td><%= link_to 'Destroy', zoo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+
+  <% zoo.animals.order("species").each do |animal| %>
+    <tr>
+      <td></td>
+      <td><%= animal.species %></td>
+      <td><%= animal.count %></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  <% end %>
+
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Zoo', new_zoo_path %>

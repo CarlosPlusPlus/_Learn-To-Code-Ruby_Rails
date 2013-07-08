@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h3>Name:</h3>
+<p><%= @zoo.name %></p>
+
+<h3>Animals:</h3>
+<table>
+  <tr>
+    <th>Species</th>
+    <th>Count</th>
+  </tr>
+
+<% @zoo.animals.order("species").each do |animal| %>
+  <tr>
+    <td><%= animal.species %></td>
+    <td><%= animal.count %></td>
+  </tr>
+<% end %>
+
+</table>
+
+<br>
+
+<%= link_to 'Edit', edit_zoo_path(@zoo) %> |
+<%= link_to 'Back', zoos_path %>
