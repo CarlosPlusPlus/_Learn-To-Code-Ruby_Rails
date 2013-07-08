@@ -32,9 +32,9 @@
   <div class="page-title">
     <h4 class="ib_main_header"><%= @student.name %></h4>
     <div class="social-icons">
-      <a href="http://twitter.com/cjlwired" target="_blank"><i class="icon-twitter ib-social-icons"></i></a>
-      <a href="http://www.linkedin.com/in/carlosjlazo" target="_blank"><i class="icon-linkedin-sign ib-social-icons"></i></a>
-      <a href="http://github.com/cjlwired" target="_blank"><i class="icon-github ib-social-icons"></i></a>
+      <a href="<%=@student.twitter%>" target="_blank"><i class="icon-twitter ib-social-icons"></i></a>
+      <a href="<%=@student.linkedin%>" target="_blank"><i class="icon-linkedin-sign ib-social-icons"></i></a>
+      <a href="<%=@student.github%>" target="_blank"><i class="icon-github ib-social-icons"></i></a>
       <a href="#" target="_blank"><i class="icon-rss ib-social-icons"></i></a>
     </div>
 
@@ -43,7 +43,7 @@
         <ul class="testimonials slides">
           <li id="text-7" class="widget_text" style="list-style: none; display: list-item;">
             <div class="textwidget">
-              <h3>"The greatest risk in life is not taking one." -- Author Unknown</h3>
+              <h3><%=@student.quote%></h3>
             </div>
           </li>
         </ul>
@@ -67,7 +67,7 @@
             <div class="services-title"><h3>Biography</h3></div>
             <div class="clear"></div>
             <p>
-              Countered missiles and jammed enemy radars for a living. Shifting gears and focusing on the creation, expression, and manifestation of cool ideas through software development.<br><br> Changing the world, one line of code at a time. 
+             <%= @student.bio %>
             </p>
           </div>
         </div>
@@ -76,12 +76,7 @@
           <div class="services">
             <div class="services-title"><h3>Education</h3></div>
             <div class="clear"></div>
-            <ul>
-               <li>Worcester Polytechnic Institute<br>
-                2011, M.S. Electrical & Computer Engineering</li>
-              <li>Rensselaer Polytechnic Institute<br>
-                2008, B.S. Computer & Systems Engineering</li>
-            </ul>
+            <p>@student.education goes here!
           </div>
         </div>
 
@@ -90,11 +85,7 @@
             <div class="services-title"><h3>Work</h3></div>
             <div class="clear"></div>
             <p>
-              <h4>BAE Systems, Inc.</h4>
-              - Senior Software Engineer<br>
-              - Software Test Lead/Manager<br>
-              - Electrical Engineer<br>
-              - Systems Engineer<br>
+              @student.experience goes here!
             </p>
           </div>
         </div>
@@ -110,7 +101,7 @@
           <div class="services-wrap section coder-cred" id="equalize">
 
             <div class="column fourth">
-              <a href="http://www.github.com/cjlwired" target="_blank"><img src="http://static.001.students.flatironschool.com/images/github_eewang.png" alt="GitHub" width="130px"></a>
+              <a href="<%=@student.github%>" target="_blank"><img src="http://static.001.students.flatironschool.com/images/github_eewang.png" alt="GitHub" width="130px"></a>
             </div>
 
             <div class="column fourth">
@@ -159,7 +150,7 @@
               </div>
               <div class="clear"></div>
               <p>
-                - <a href="http://about.me/carlosjlazo" target="_blank">Personal Homepage</a><br>
+                - <a href="http://about.me/" target="_blank">Personal Homepage</a><br>
               </p>
             </div>
           </div>
