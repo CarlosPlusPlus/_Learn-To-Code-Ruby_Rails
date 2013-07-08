@@ -2916,7 +2916,7 @@ input.hs-button.primary.large{
 }
 
 .top-page-title {
-  background: url(../img/desmond-background.jpg) no-repeat top center;
+  background-image: url(carloslazo-splash.png);
   background-size: 100% 100%;
   margin-bottom: 100px;
   text-align: center;

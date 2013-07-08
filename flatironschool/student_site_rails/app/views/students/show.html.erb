@@ -1,45 +1,233 @@
-<p id="notice"><%= notice %></p>
+<!-- Begin Main Wrapper -->
+<div class="main-wrapper">
+  <div class="link-subs">
+    <span>
+      <%=image_tag "swiss-army-knife.png", :style => "width: 16px"%>
+      <%= @student.name %>
+    </span>
+    <ul>
+      <li><a href="#scroll-about">About</a></li>
+      <li>|</li>
+      <li><a href="#scroll-coder-cred">Coder Cred</a></li>
+      <li>|</li>
+      <li><a href="#scroll-recently">Recently</a></li>
+      <li>|</li>
+      <li><a href="#scroll-favorites">Favorites</a></li>
+    </ul>
+  </div>
+</div>
 
-<p>
-  <b>Name:</b>
-  <%= @student.name %>
-</p>
+<!-- Begin Content -->
+<div class="container">
 
-<p>
-  <b>Tagline:</b>
-  <%= @student.tagline %>
-</p>
+  <!-- Begin Splash Image -->
+  <div class="top-page-title">
+    <div>
+      <%=image_tag "orly.jpg", :class => "student_pic"%>
+    </div>
+  </div>
+  <! -- End Splash Image -->
 
-<p>
-  <b>Bio:</b>
-  <%= @student.bio %>
-</p>
+  <!-- Begin Title Content -->
+  <div class="page-title">
+    <h4 class="ib_main_header"><%= @student.name %></h4>
+    <div class="social-icons">
+      <a href="http://twitter.com/cjlwired" target="_blank"><i class="icon-twitter ib-social-icons"></i></a>
+      <a href="http://www.linkedin.com/in/carlosjlazo" target="_blank"><i class="icon-linkedin-sign ib-social-icons"></i></a>
+      <a href="http://github.com/cjlwired" target="_blank"><i class="icon-github ib-social-icons"></i></a>
+      <a href="#" target="_blank"><i class="icon-rss ib-social-icons"></i></a>
+    </div>
 
-<p>
-  <b>Treehouse profile:</b>
-  <%= @student.treehouse_profile %>
-</p>
+    <div class="section section-testimonials-curriculum quote-div">
+      <div id="testimonial-slider" class="flexslider">
+        <ul class="testimonials slides">
+          <li id="text-7" class="widget_text" style="list-style: none; display: list-item;">
+            <div class="textwidget">
+              <h3>"The greatest risk in life is not taking one." -- Author Unknown</h3>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End Title Content -->
 
-<p>
-  <b>Linkedin:</b>
-  <%= @student.linkedin %>
-</p>
+  <!-- Some Content on Full Width -->
+  <div id="random-full-width-content" class="this-div-is-just-a-helpful-container">
+    <div id="scroll-about" class="section section-services">
+      <div class="section-title">
+        <span class="actual-title">About</span>
+        <div class="go-to-top"><a href="#scroll-header">Go To Top</a></div>
+      </div>
 
-<p>
-  <b>Twitter:</b>
-  <%= @student.twitter %>
-</p>
+      <div class="services-wrap" id="equalize">
 
-<p>
-  <b>Github:</b>
-  <%= @student.github %>
-</p>
+        <div id="ok-text-column-2" class="column ok-text-column" style="height: 204px;">
+          <div class="services">
+            <div class="services-title"><h3>Biography</h3></div>
+            <div class="clear"></div>
+            <p>
+              Countered missiles and jammed enemy radars for a living. Shifting gears and focusing on the creation, expression, and manifestation of cool ideas through software development.<br><br> Changing the world, one line of code at a time. 
+            </p>
+          </div>
+        </div>
 
-<p>
-  <b>Quote:</b>
-  <%= @student.quote %>
-</p>
+        <div id="ok-text-column-3" class="column ok-text-column" style="height: 204px;">
+          <div class="services">
+            <div class="services-title"><h3>Education</h3></div>
+            <div class="clear"></div>
+            <ul>
+               <li>Worcester Polytechnic Institute<br>
+                2011, M.S. Electrical & Computer Engineering</li>
+              <li>Rensselaer Polytechnic Institute<br>
+                2008, B.S. Computer & Systems Engineering</li>
+            </ul>
+          </div>
+        </div>
 
-<%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %> |
-<%= link_to 'Delete', @student, method: :delete, confirm: 'Are you sure?'%>
+        <div id="ok-text-column-4" class="column ok-text-column" style="height: 204px;">
+          <div class="services">
+            <div class="services-title"><h3>Work</h3></div>
+            <div class="clear"></div>
+            <p>
+              <h4>BAE Systems, Inc.</h4>
+              - Senior Software Engineer<br>
+              - Software Test Lead/Manager<br>
+              - Electrical Engineer<br>
+              - Systems Engineer<br>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div id="random-full-width-content" class="this-div-is-just-a-helpful-container">
+        <div class="section section-services">
+          <div id="scroll-coder-cred" class="section-title">
+            <span class="actual-title">Coder Cred</span>
+            <div class="go-to-top"><a href="#scroll-header">Go To Top</a></div>
+          </div>
+
+          <div class="services-wrap section coder-cred" id="equalize">
+
+            <div class="column fourth">
+              <a href="http://www.github.com/cjlwired" target="_blank"><img src="http://static.001.students.flatironschool.com/images/github_eewang.png" alt="GitHub" width="130px"></a>
+            </div>
+
+            <div class="column fourth">
+              <a href="http://teamtreehouse.com/cjlwired/" target="_blank"><img src="http://static.001.students.flatironschool.com/images/treehouse_eewang.png" alt="Treehouse" width="130px"></a>
+            </div>
+
+            <div class="column fourth">
+              <a href="http://www.codeschool.com/users/cjlwired" target="_blank"><img src="http://static.001.students.flatironschool.com/images/codeschool_eewang.jpg" alt="Code School" width="130"></a>
+            </div>
+
+            <div class="column fourth">
+              <a href="https://coderwall.com/cjlwired" target="_blank"><img src="http://static.001.students.flatironschool.com/images/coderwall_eewang.jpeg" alt="Coder Wall" width="130"></a>
+            </div>
+          </div>
+          <! -- End Service -->
+        </div>
+        <! -- End Coder Cred -->
+      </div>
+
+      <div id="random-full-width-content" class="this-div-is-just-a-helpful-container">
+        <div id="scroll-recently" class="section section-services">
+          <div class="section-title">
+            <span class="actual-title">Recently</span>
+            <div class="go-to-top"><a href="#scroll-header">Go To Top</a></div>
+          </div>
+
+          <div class="services-wrap" id="equalize">
+            <div id="ok-text-column-2" class="column ok-text-column" style="height: 204px;">
+              <div class="services">
+                <div class="services-title">
+                  <h3>Coding Profiles</h3>
+                </div>
+                <div class="clear"></div>
+                <p>
+                  - <a href="http://www.codeschool.com/users/cjlwired" target="_blank">Code School</a><br>
+                  - <a href="http://teamtreehouse.com/cjlwired" target="_blank">Treehouse</a><br>
+                  - <a href="http://www.codecademy.com/cjlwired" target="_blank">Codecademy</a><br>
+                  - <a href="https://coderwall.com/cjlwired/" target="_blank">Coder Wall</a><br>
+                </p>
+              </div>
+            </div>
+
+            <div id="ok-text-column-3" class="column ok-text-column" style="height: 204px;">
+              <div class="services">
+                <div class="services-title"><h3>Personal Projects</h3>
+              </div>
+              <div class="clear"></div>
+              <p>
+                - <a href="http://about.me/carlosjlazo" target="_blank">Personal Homepage</a><br>
+              </p>
+            </div>
+          </div>
+
+          <div id="ok-text-column-4" class="column ok-text-column" style="height: 204px;">
+            <div class="services">
+              <div class="services-title">
+                <h3>Flatiron School Projects</h3>
+              </div>
+              <div class="clear"></div>
+              <p>Coming Soon...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="random-full-width-content" class="this-div-is-just-a-helpful-container">
+        <div id="scroll-favorites" class="section section-services">
+          <div class="section-title">
+            <span class="actual-title">Favorites</span>
+            <div class="go-to-top"><a href="#scroll-header">Go To Top</a></div>
+          </div>
+
+          <div class="services-wrap" id="equalize">
+            <div id="ok-text-column-2" class="column ok-text-column" style="height: 204px;">
+              <div class="services">
+                <div class="services-title">
+                  <h3>Websites</h3>
+                </div>
+                <div class="clear"></div>
+                <p>
+                  - <a href="http://www.airbnb.com" target="_blank">AirBnb</a><br>
+                  - <a href="http://www.craigslist.com" target="_blank">Craigslist</a><br>
+                  - <a href="http://www.lifehacker.com" target="_blank">Lifehacker</a><br>
+                  - <a href="http://www.mint.com" target="_blank">Mint</a><br>
+                </p>
+              </div>
+            </div>
+
+            <div id="ok-text-column-3" class="column ok-text-column" style="height: 204px;">
+              <div class="services">
+                <div class="services-title"><h3>Apps</h3>
+              </div>
+              <div class="clear"></div>
+              <p>
+                - <a href="http://www.evernote.com/" target="_blank">Evernote</a><br>
+                - <a href="http://www.mailboxapp.com/" target="_blank">Mailbox</a><br>
+                - <a href="http://www.vine.co/" target="_blank">Vine</a><br>
+              </p>
+            </div>
+          </div>
+
+          <div id="ok-text-column-4" class="column ok-text-column" style="height: 204px;">
+            <div class="services">
+              <div class="services-title">
+                <h3>Flatiron School Projects</h3>
+              </div>
+              <div class="clear"></div>
+              <p>Coming Soon..</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="clear"></div>
+  </div>
+</div>
+</div>
+<div class="clear"></div>
