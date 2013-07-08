@@ -12,4 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require comment-reply.min
+//= require chirp.min
+//= require jquery.flexslider
+//= require jquery.tabs.min
+//= require jquery.fitvids
+//= require jquery.mobilemenu

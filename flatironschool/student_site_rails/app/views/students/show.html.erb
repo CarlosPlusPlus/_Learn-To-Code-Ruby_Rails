@@ -40,7 +40,6 @@
   <%= @student.quote %>
 </p>
 
-
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %> |
-<%= link_to "Remove", @student, method: :delete, data: { confirm: "Are you sure?" } %>
+<%= link_to 'Delete', @student, method: :delete, confirm: 'Are you sure?'%>
