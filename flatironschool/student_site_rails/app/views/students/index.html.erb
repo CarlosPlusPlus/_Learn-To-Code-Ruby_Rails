@@ -25,7 +25,8 @@
           <li class="home-blog-post">
 
             <div class="blog-thumb">
-              <a href="students/<%= student.id %>">
+                <%= link_to student.name, student %>
+                <a href="students/<%= student.id %>">
                 <img width="360" height="140" src="http://placekitten.com/360/140" class="attachment-blog-thumb wp-post-image" alt="">
               </a>
             </div>
