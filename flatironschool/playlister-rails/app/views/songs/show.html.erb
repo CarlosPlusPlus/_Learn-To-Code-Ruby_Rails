@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h1><%= link_to @song.artist.name, @song.artist %> - <%= @song.name %></h1>
+</p>
+
+<iframe src="http://youtube.com/embed/<%= @song.youtube["video_id"] %>"></iframe>
+<p>
+<%= link_to 'Edit', edit_song_path(@song) %> |
+<%= link_to 'Back to Index', app_index_path %>
+</p>

@@ -1,4 +1,13 @@
 PlaylisterRails::Application.routes.draw do
+  get "app/index"
+
+  resources :genres
+  resources :songs
+  resources :artists
+
+  root :to => 'app#index'
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

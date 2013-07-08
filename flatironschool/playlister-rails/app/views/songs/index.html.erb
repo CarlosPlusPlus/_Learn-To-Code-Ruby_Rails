@@ -1,0 +1,25 @@
+<h1>My Songs</h1>
+
+<%= link_to 'Add a New Song', new_song_path %>  |
+<%= link_to 'Back to Index', app_index_path %>
+<br /><br />
+<table>
+  <tr>
+    <th>Song Name</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @songs.each do |song| %>
+  <tr>
+    <td><%= link_to song.name, song %></td>
+    <td><%= link_to 'Edit', edit_song_path(song) %></td>
+    <td><%= link_to 'Delete', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Add a New Song', new_song_path %>  |
+<%= link_to 'Back to Index', app_index_path %>
