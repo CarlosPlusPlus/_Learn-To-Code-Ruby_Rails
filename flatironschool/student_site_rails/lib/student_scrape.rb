@@ -44,6 +44,14 @@ class StudentScrape
     self.doc.search('#equalize #ok-text-column-2 .services p').text.strip
   end
 
+  def education
+    self.doc.search('#ok-text-column-3 .services ul').text.strip
+  end
+
+  def work
+    self.doc.search('#ok-text-column-4 .services p').text.strip
+  end
+
   def self.student_urls
     doc = Nokogiri::HTML(open('http://students.flatironschool.com'))
     url_search = doc.search('.blog-title .big-comment h3')
