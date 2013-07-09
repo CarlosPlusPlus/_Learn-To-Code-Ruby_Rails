@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @deck.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @deck.description %>
+</p>
+
+<p>
+	<b>Cards:</b>
+	<% @deck.cards.each do |c| %>
+		<p> Name = <%= c.name %>, Strength = <%= c.strength %> </p>
+	<% end %>
+</p>
+
+
+<%= link_to 'Edit', edit_deck_path(@deck) %> |
+<%= link_to 'Back', decks_path %>

@@ -1,0 +1,28 @@
+<%= form_for(@deck) do |f| %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+
+  <% 3.times do %>
+    <%= label_tag 'cards[][name]', "Card Name:" %>
+    <%= text_field_tag 'cards[][name]' %>
+
+    <%= label_tag 'cards[][strength]', "Card Strength:" %>
+    <%= text_field_tag 'cards[][strength]' %>
+    <br>
+  <% end %>
+
+  <br>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>

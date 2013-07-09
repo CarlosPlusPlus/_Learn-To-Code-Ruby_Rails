@@ -1,0 +1,18 @@
+<%= form_for(@card) do |f| %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :strength %><br />
+    <%= f.number_field :strength %>
+  </div>
+  
+  <%= label_tag 'deck_id', "Deck ID:" %>
+  <%= text_field_tag 'deck_id' %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
