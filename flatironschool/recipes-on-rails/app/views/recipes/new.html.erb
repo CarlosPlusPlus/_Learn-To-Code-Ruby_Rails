@@ -1,0 +1,26 @@
+<h1>Create a New Recipe</h1>
+
+<%= form_tag recipes_path do %>
+	
+	<p>
+		<%= label_tag 'recipe[name]', "Recipe Name:" %>
+		<br>
+		<%= text_field_tag 'recipe[name]' %>
+	</p>
+
+	<p> Add up to 3 ingredients! </p>
+		
+	<% 3.times do %>
+		<%= text_field_tag 'recipe[ingredients_to_add][]' %>
+		<br>
+	<% end %>
+
+	<br>
+
+	<%= submit_tag "Submit Recipe" %>
+
+<% end %>
+
+<br>
+
+<%= link_to 'Back', recipes_path %>
