@@ -18,9 +18,9 @@ s1 = Song.new(:name => "Gimme the Loot")
 s2 = Song.new(:name => "Dead Wrong")
 s3 = Song.new(:name => "Hypnotize")
 
-s1.album = Album.new(:name => "Ready to Die")
-s2.album = Album.new(:name => "Born Again")
-s3.album = Album.new(:name => "Life After Death")
+s1.build_album(:name => "Ready to Die")
+s2.build_album(:name => "Born Again")
+s3.build_album(:name => "Life After Death")
 
 art = Artist.new(:name => "Notorious B.I.G.")
 
