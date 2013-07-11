@@ -1,0 +1,40 @@
+<style>
+div.field_with_errors label {
+  border: 4px solid red;
+}
+div.field_with_errors input {
+  border: 4px solid red;
+}
+</style>
+
+<% if @recipe && @recipe.errors.present? %>
+  <h1>An error prevented the recipe from being saved:</h1>
+  <ul>
+    <% @recipe.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for(@recipe) do |the_recipe_form_object| %>
+  <% raise the_recipe_form_object.inspect %>
+  <p>
+    <%= label(:recipe, :name) %>
+    <%= text_field(:recipe, :name) %>
+  </p>
+
+  <p>
+    <%= label_tag 'recipe[ingredients_to_add][]', 'Ingredients' %>
+    <ul>
+      <% @recipe.ingredients.each do |ingredient| %>
+
+      <li>
+        <%= text_field(:recipe, :ingredients_to_add, :name => 'recipe[ingredients_to_add][]', :value => ingredient.name) %>
+
+        <%= text_field_tag 'recipe[ingredients_to_add][]', ingredient.name %>
+      </li>
+      <% end %>
+    </ul>
+  </p>
+  <%= submit_tag %>
+<% end %>

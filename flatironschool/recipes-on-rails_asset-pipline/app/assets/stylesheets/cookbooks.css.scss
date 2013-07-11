@@ -1,0 +1,26 @@
+// Place all the styles related to the Cookbooks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+	padding-top: 60px;
+}
+
+h2 {
+	display: inline;
+	position: relative;
+	top: 5px;
+}
+
+.tile {
+	background: none;
+}
+
+ul {
+	list-style: none;
+}
+
+.add_new a {
+	color: white;
+	text-decoration: none;
+}

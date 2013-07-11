@@ -1,0 +1,14 @@
+<h1>Listing cookbooks</h1>
+
+<ul>
+
+<% @cookbooks.each do |cookbook| %>
+  <%= render "shared/cookbook", :cookbook => cookbook %>
+<% end %>
+
+</ul>
+
+<li class ="btn btn-success btn-large pull-right add_new">
+  <span class="fui-plus-16"></span>
+  <%= link_to 'New Cookbook', new_cookbook_path %>
+</li>

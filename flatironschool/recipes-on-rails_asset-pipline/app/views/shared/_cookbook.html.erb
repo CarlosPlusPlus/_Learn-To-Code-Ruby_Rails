@@ -1,0 +1,13 @@
+<li class="row-fluid">
+  <div class="span12 well">
+
+    <h2><%= cookbook.name %></h2>
+
+    <span class="pull-right tile">
+      <%= link_to 'Show', cookbook, :class => "btn btn-info" %>
+      <%= link_to 'Edit', edit_cookbook_path(cookbook), :class => "btn btn-warning" %>
+      <%= link_to 'Destroy', cookbook, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
+    </span>
+
+  </div>
+</li>
