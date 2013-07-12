@@ -1,5 +1,6 @@
 class Recipe < ActiveRecord::Base
   attr_accessible :name, :ingredients, :ingredients_to_add
+  
   has_many :recipe_ingredients
   has_many :ingredients, :through => :recipe_ingredients
 

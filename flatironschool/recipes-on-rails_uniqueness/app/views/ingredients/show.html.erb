@@ -1,6 +1,6 @@
-<h1><%= @ingredient.name %></h1>
+<h3><%= @ingredient.name %></h3>
 
-Used in:
+This Ingredient is used in the following recipes:
 <ul>
   <% @ingredient.recipes.each do |recipe| %>
     <li><%= link_to recipe.name, recipe %></li>
