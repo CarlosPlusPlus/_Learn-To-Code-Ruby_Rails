@@ -1,0 +1,32 @@
+<!-- 
+
+Your goal is to redo this form with Rails helpers and make it work by building out the correct models.
+
+You need recipes, recipe_ingredients, and ingredients.
+
+A subtlty of this application is the ingredients must be unique. Jump over to the ingredients/show view, you'll see there that a requirement is this application is that you can see what recipes an ingredient is used in. That means that you can only have one ingredient named "Chicken" and on the Chicken show page (maybe represented via /ingredients/1, where 1 is the primary key of the Chicken)
+
+Therefore, when creating a new recipe and adding ingredients, you must figure out a way to make sure that the user can add a new ingredient but also can select an existing ingredient.
+
+If you get clever, you can have 1 text box behave both ways, capable of adding a new ingredient if it doesn't exist, or finding the ingredient and adding it to the current recipe. Or you can use a seperate select box for each ingredient to add and then a text box to add a new ingredient.
+
+-->
+
+<%= form_tag recipes_path do %>
+  <p>
+    Recipe name:
+    <%= text_field_tag 'recipe[name]' %>
+  </p>
+  <p>
+    Ingredients:
+  </p>
+  <ul>
+    <% 5.times do %>
+      <li>
+        <%= text_field_tag 'recipe[ingredients_to_add][]' %>
+      </li>
+    <% end %>
+    <%= submit_tag %>
+  </ul>
+  
+<% end %>

@@ -1,0 +1,11 @@
+<!-- A view that shows you all the ingredients in a recipe. -->
+
+<h1><%= @recipe.name %></h1>
+
+<h2>Ingredients:</h2>
+
+<ol>
+  <% @recipe.ingredients.each do |ingredient| %>
+    <li><%= link_to ingredient.name, ingredient %></li>
+  <% end %>
+</ol>
