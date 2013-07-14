@@ -44,26 +44,25 @@ class Player
 	##################
 
 	def check_health
-		if (@warrior_health < 15) && (@in_combat == :no)
+		if (@cur_health < 15) && (@in_combat == :no)
 			@warrior.rest!
 			@action_taken = true
 		end
 	end
 
 	def attack_monster
-		if (@space_state == false)
+		case @in_combat
+		when :near							# Enemy is adjacent.
 			@warrior.attack!
-
 			@action_taken = true
-			@in_combat 		= true
-		else
-			@in_combat			= false
+		when :far								# Walk to enemy.
+			@warrior.walk!
+			@action_taken = true
 		end
 	end
 
 	def move_warrior
-		@warrior.walk! if @action_taken == false
-		@action_taken = true
+		@warrior.walk!
 	end
 
 	##################
@@ -72,15 +71,15 @@ class Player
 
 	# Did I lose health from last turn to this one?
 	def lost_health?
-		cur_health ~= prv_health ? true : false
+		(@cur_health - @prv_health) < 0 ? true : false
 	end
 
 	# Am I in combat? If so, what "kind" of combat?
 	def in_combat?
 		combat_state = :no
 
-		:near if (@space_empty == false)
-		:far	if (@space_state == true) && (lost_health? == true)
+		combat_state = :near if (@space_empty == false)
+		combat_state = :far	 if (@space_empty == true) && (lost_health? == true)
 		
 		combat_state
 	end
@@ -90,6 +89,10 @@ class Player
 	#####################
 
 	def perform_action
+		Actions.each do |action|
+			send action
+			break if @action_taken == true
+		end
 	end
 
 	####################
