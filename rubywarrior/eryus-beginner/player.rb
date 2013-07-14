@@ -6,10 +6,6 @@ class Player
 
 	# Initialize instance variables.
 	def initialize
-		@action_taken 	= false		# Did I take my action?
-		@in_combat			= false		# Am I in combat?
-		@space_empty		= false		# Is the space empty?
-		
 		@prv_health			= 20			# What was my previous health?
 		@cur_health			=	20			# What is my current health?
 	end
@@ -23,6 +19,7 @@ class Player
 	# Pre and Post Processing #
 	###########################
 
+	# Understand environment prior to taking action.
 	def pre_sense
   	# Reset warrior action from previous turn.
 		@action_taken		= false
@@ -32,9 +29,10 @@ class Player
 		@cur_health			= @warrior.health
 
 		# Determine combat state.
-		@in_combat = in_combat?
+		@in_combat 			= in_combat?
 	end
 
+	# Perform state analysis for net turn.
 	def post_sense
 		@prv_health			= @warrior.health
 	end
