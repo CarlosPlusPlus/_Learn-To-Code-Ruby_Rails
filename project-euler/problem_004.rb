@@ -2,16 +2,7 @@
 # Largest palindrome product
 
 def palindrome?(num)
-  str = num.to_s
-
-  len = str.length
-  mid = (len / 2.0).ceil
-
-  for i in 0..mid
-    return false if str[i] != str[len-1-i] 
-  end
-
-  true
+  num.to_s == num.to_s.reverse
 end
 
 # Return maximum palindrome for 3 digit #s.
