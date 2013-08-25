@@ -20,7 +20,8 @@ def find_max_palindrome
   
   (100..999).each do |i|
       (i..999).each do |j|
-      max_palindrome = i*j if (palindrome?(i*j) && (i*j > max_palindrome))
+        prod = i*j
+        max_palindrome = prod if (palindrome?(prod) && (prod > max_palindrome))
     end
   end
 
