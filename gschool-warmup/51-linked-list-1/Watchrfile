@@ -1,0 +1,10 @@
+# From the docs:
+# Agile development tool that monitors a directory tree, and triggers a
+# user defined action whenever an observed file is modified. Its most
+# typical use is continuous testing, and as such it is a more flexible
+# alternative to autotest.
+# To install:
+# `gem install watchr`
+# To use:
+# watchr Watchrfile
+watch('(.*).rb') { |md| system "ruby test.rb"}
