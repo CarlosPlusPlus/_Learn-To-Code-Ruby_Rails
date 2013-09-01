@@ -24,9 +24,3 @@ yaml_hash 	= YAML.load_file('shipping.yaml')
 parsed_yaml = YamlParser.new(yaml_hash)
 
 puts parsed_yaml.product.first.sku.inspect
-
-# puts parsed_yaml.billto.given.inspect
-# puts parsed_yaml.invoice
-# pp parsed_yaml.yaml
-# test = YAML.load_file('shipping.yaml')
-# puts test.inspect
