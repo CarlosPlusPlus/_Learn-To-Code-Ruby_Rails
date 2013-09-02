@@ -1,6 +1,7 @@
 # Problem 8
 # Largest Product in a Series
 
+# Compute product in a string of size seq_size.
 def compute_product(product_string)
 	product_string.split("").collect{|char| char.to_i}.inject(:*)
 end
@@ -17,4 +18,3 @@ long_str = long_int.to_s
 end
 
 puts "Maximum product is: #{max_prod}"
-puts (long_str.size - seq_size)
