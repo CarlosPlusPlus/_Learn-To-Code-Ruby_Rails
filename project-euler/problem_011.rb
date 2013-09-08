@@ -62,21 +62,21 @@ notes
 ###########
 tgrid = (1..4).to_a.collect { |num| Array.new(4,num) }
 # tgrid[0] = [1,2,2,3]
-p tgrid
+# p tgrid
 
 def horizontal_prod(grid)
-
 	max = 0
-
-	for i in (0..(grid.length-4)) do
-		product = grid[i].slice(i,4).inject(:*)
-		max 		= product if product > max
+	grid.each do |row|
+		for i in (0..(grid.length-4)) do
+			product = row.slice(i,4).inject(:*)
+			max = product if product >  max
+		end
 	end
-
 	max
 end
 
-puts horizontal_prod(tgrid)
+# puts horizontal_prod(tgrid)
+# puts horizontal_prod(grid)
 
 def vertical_prod
 	
