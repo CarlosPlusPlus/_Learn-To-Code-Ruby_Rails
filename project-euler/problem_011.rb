@@ -78,9 +78,29 @@ end
 # puts horizontal_prod(tgrid)
 # puts horizontal_prod(grid)
 
-def vertical_prod
-	
+def vertical_prod(grid)
+	max = 0
+	for i in (0..(grid.length-1)) do
+			product = grid[0][i] * grid[1][i] * grid[2][i] * grid[3][i]
+		max = product if product >  max
+	end
+	max
 end
+
+tgrid[0][2] = 100
+
+puts vertical_prod(tgrid)
+
+	# grid.each do |row|
+	# 	for i in (0..(grid.length-4)) do
+	# 		product = row.slice(i,4).inject(:*)
+	# 		max = product if product >  max
+	# 	end
+	# end
+	# max
+# end
+
+
 
 def diagonalL_prod
 	
