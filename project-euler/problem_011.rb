@@ -29,10 +29,39 @@ grid =
 	["01", "70", "54", "71", "83", "51", "54", "69", "16", "92", "33", "48", "61", "43", "52", "01", "89", "19", "67", "48"]
 ].collect{|row| row.collect{|n| n.to_i }}
 
-p grid
+<<-notes
+
+- Sequence of four elements in any direction.
+
+- For each direction:
+	> Horizontal sweep for each directional product.
+	> Vertically sweep the same pattern down.
+
+- Directions:
+	> Horizontal
+	> Vertical
+	> Diagonal R
+	> Diagonal L
+
+- Find a way to keep track of the highest product found.
+
+=====
+
+For cardinal directions [H | V]
+	> Inject across the ranges in the matrix (:*)
+	> Keep track and return highest product
+
+For the "main" method:
+
+	[h_prod(grid),v_prod(grid),dr_prod(grid),dl_prod(grid)].max
+
+notes
+
 ###########
 # METHODS #
 ###########
+
+
 
 ############
 # SOLUTION #
