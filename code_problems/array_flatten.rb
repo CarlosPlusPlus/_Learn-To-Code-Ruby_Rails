@@ -1,3 +1,9 @@
+<<-problem
+
+Flatten an array without using the flatten method.
+
+problem
+
 def flatten(array)
 	return [array] if array.is_a?(Fixnum) || array.is_a?(String)
 	array.collect{|n| flatten(n) }.inject(:+)
