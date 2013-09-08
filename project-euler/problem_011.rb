@@ -85,10 +85,6 @@ def vertical_prod(grid)
 		for col in (0..(grid.length-1)) do
 			product = (row..(row+3)).collect{|n| grid[n][col] }.inject(:*)
 			max = product if product >  max
-			# if product >  max
-			# 	max = product
-			# 	# puts "Max array = #{(row..(row+3)).collect{|n| grid[n][col] }} : #{product}"
-			# end
 		end
 	end
 	max
@@ -101,30 +97,34 @@ def diagonalL_prod(grid)
 	max = 0
 	for row in (0..(grid.length-4)) do
 		for col in (0..(grid.length-4)) do
-
-
-			product = (0..3).collect {|num| grid[row+num][col+num] }.inject(:*)
-			# product = grid[row][col] * grid[row+1][col+1] * grid[row+2][col+2] * grid[row+3][col+3]
-			# product = (row..(row+3)).collect{|n| grid[n][col] }.inject(:*)
-			
+			product = (0..3).collect {|num| grid[row+num][col+num] }.inject(:*)			
 			max = product if product >  max
-			# if product >  max
-			# 	max = product
-			# 	puts "Max array = #{[grid[row][col],grid[row+1][col+1],grid[row+2][col+2],grid[row+3][col+3]]} : #{product}"
-			# end
 		end
 	end
 	max
 end
 
-puts diagonalL_prod(tgrid)
-puts diagonalL_prod(tgrid2)
-puts diagonalL_prod(grid)
+# puts diagonalL_prod(tgrid)
+# puts diagonalL_prod(tgrid2)
+# puts diagonalL_prod(grid)
 
 def diagonalR_prod(grid)
-	
+	max = 0
+	for row in (0..(grid.length-4)) do
+		for col in (3..(grid.length-1)) do
+			product = (0..3).collect {|num| grid[row+num][col-num] }.inject(:*)			
+			if product >  max
+				max = product 
+				puts "nums: #{(0..3).collect{|num| grid[row+num][col-num] }} Prod: #{product}"
+			end
+		end
+	end
+	max
 end
 
+# puts diagonalL_prod(tgrid)
+# puts diagonalL_prod(tgrid2)
+puts diagonalR_prod(grid)
 
 ############
 # SOLUTION #
