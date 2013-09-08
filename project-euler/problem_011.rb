@@ -67,8 +67,8 @@ tgrid = (1..4).to_a.collect { |num| Array.new(4,num) }
 def horizontal_prod(grid)
 	max = 0
 	grid.each do |row|
-		for i in (0..(grid.length-4)) do
-			product = row.slice(i,4).inject(:*)
+		for start in (0..(grid.length-4)) do
+			product = row.slice(start,4).inject(:*)
 			max = product if product >  max
 		end
 	end
@@ -80,33 +80,27 @@ end
 
 def vertical_prod(grid)
 	max = 0
-	for i in (0..(grid.length-1)) do
-			product = grid[0][i] * grid[1][i] * grid[2][i] * grid[3][i]
-		max = product if product >  max
+	for row in (0..(grid.length-4)) do
+		for col in (0..(grid.length-1)) do
+			product = (row..(row+3)).collect{|n| grid[n][col] }.inject(:*)
+			max = product if product >  max
+			# if product >  max
+			# 	max = product
+			# 	# puts "Max array = #{(row..(row+3)).collect{|n| grid[n][col] }} : #{product}"
+			# end
+		end
 	end
 	max
 end
 
-tgrid[0][2] = 100
+# puts vertical_prod(tgrid)
+# puts vertical_prod(grid)
 
-puts vertical_prod(tgrid)
-
-	# grid.each do |row|
-	# 	for i in (0..(grid.length-4)) do
-	# 		product = row.slice(i,4).inject(:*)
-	# 		max = product if product >  max
-	# 	end
-	# end
-	# max
-# end
-
-
-
-def diagonalL_prod
+def diagonalL_prod(grid)
 	
 end
 
-def diagonalR_prod
+def diagonalR_prod(grid)
 	
 end
 
