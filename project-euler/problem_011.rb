@@ -60,10 +60,9 @@ notes
 ###########
 # METHODS #
 ###########
+
 tgrid  = (1..4).to_a.collect { |num| Array.new(4,num) }
 tgrid2 = (1..5).to_a.collect { |num| Array.new(5,num) }
-# tgrid[0] = [1,2,2,3]
-# p tgrid
 
 def horizontal_prod(grid)
 	max = 0
@@ -76,9 +75,6 @@ def horizontal_prod(grid)
 	max
 end
 
-# puts horizontal_prod(tgrid)
-# puts horizontal_prod(grid)
-
 def vertical_prod(grid)
 	max = 0
 	for row in (0..(grid.length-4)) do
@@ -89,9 +85,6 @@ def vertical_prod(grid)
 	end
 	max
 end
-
-# puts vertical_prod(tgrid)
-# puts vertical_prod(grid)
 
 def diagonalL_prod(grid)
 	max = 0
@@ -104,28 +97,19 @@ def diagonalL_prod(grid)
 	max
 end
 
-# puts diagonalL_prod(tgrid)
-# puts diagonalL_prod(tgrid2)
-# puts diagonalL_prod(grid)
-
 def diagonalR_prod(grid)
 	max = 0
 	for row in (0..(grid.length-4)) do
 		for col in (3..(grid.length-1)) do
 			product = (0..3).collect {|num| grid[row+num][col-num] }.inject(:*)			
-			if product >  max
-				max = product 
-				puts "nums: #{(0..3).collect{|num| grid[row+num][col-num] }} Prod: #{product}"
-			end
+			max = product if product >  max
 		end
 	end
 	max
 end
 
-# puts diagonalL_prod(tgrid)
-# puts diagonalL_prod(tgrid2)
-puts diagonalR_prod(grid)
-
 ############
 # SOLUTION #
 ############
+
+puts "Solution to Euler 11, compliments of Carlos && Dan = #{[horizontal_prod(grid), vertical_prod(grid), diagonalL_prod(grid), diagonalR_prod(grid)].max}"
