@@ -16,7 +16,7 @@ def get_length(word)
 	clean_word.length + and_addition
 end
 
-# Collect letter count up to max_num.
+# Collect total letter count up to max_num.
 def count_letters(max_num)
 	(1..max_num).collect { |n| get_length(num_to_words(n)) }.inject(:+)
 end
