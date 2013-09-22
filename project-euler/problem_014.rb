@@ -2,11 +2,20 @@
 # Longest Collatz Sequence
 
 class Collatz
-	CollatzSums = {}
+	Sums = {}
 
 	def self.compute_sequence(num,count)
-		# If num exists in CollatzSum, return that key.
-		# If num == 1, return 1
-		# If num.even ? (1 + Collatz(n/2,n+1)) : (1 + Colatz(3n+1, n+1))
+		
+		return (count + Sums[num]) if Sums[num]
+		
+		if num == 1
+			Sums[num] = count
+			return count
+		end
+
+		num.even? ? compute_sequence(num/2,count+1) : compute_sequence(3*num+1,count+1)
+
 	end
 end
+
+puts "Collatz value for 13 = #{Collatz.compute_sequence(13,1)}"
