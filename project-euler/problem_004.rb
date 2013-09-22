@@ -19,6 +19,5 @@ def find_max_palindrome
   max_palindrome
 end
 
-# Solve problem.
-
+# Fin maximum palindrome within given range.
 puts find_max_palindrome
