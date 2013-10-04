@@ -1,11 +1,9 @@
 <<-problem
+	Given a string consisting entirely of the characters '(' and ')'
+	in any random order, code a function that removes the sequence
+	of characters ")(" and returns the resulting string.
 
-Given a string consisting entirely of the characters '(' and ')'
-in any random order, code a function that removes the sequence
-of characters ")(" and returns the resulting string.
-
-The returned string should never have the sequence of characters ")(" in it.  
-
+	The returned string should never have the sequence of characters ")(" in it.  
 problem
 
 ########################

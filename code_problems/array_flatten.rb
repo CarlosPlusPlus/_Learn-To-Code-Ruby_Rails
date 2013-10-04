@@ -1,7 +1,5 @@
 <<-problem
-
-Flatten an array without using the flatten method.
-
+	Flatten an array without using the flatten method.
 problem
 
 def flatten(array)
