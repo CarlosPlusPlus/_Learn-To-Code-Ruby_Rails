@@ -1,8 +1,6 @@
 # Problem 22
 # Names Scores
 
-require 'awesome_print'
-
 def parse_names(path)
 	file = File.open(path).read
 	list = file.split(",").collect { |n| n.delete("\"") }
@@ -19,4 +17,6 @@ def list_score(names)
 end
 
 names = parse_names('./_support/names.txt')
-puts "Total List Score for names.txt = #{list_score(names)}"
+score = list_score(names)
+
+puts "Total list score for names.txt = #{score}"
