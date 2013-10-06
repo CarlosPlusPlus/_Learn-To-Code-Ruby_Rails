@@ -1,5 +1,5 @@
 # Problem 11
-# Largest Product in a grid
+# Largest Product in a Grid
 
 #########
 # SETUP #
