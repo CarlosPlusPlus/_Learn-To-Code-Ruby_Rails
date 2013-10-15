@@ -1,0 +1,11 @@
+--- 
+:curriculum: learn_javascript
+:repo: git@github.com:alexch/learn_javascript.git
+:labs:
+    - hello
+    - properties
+    - loops
+    - calculator
+    - temperature
+    - dom
+    - bouncing_ball
