@@ -19,17 +19,8 @@ def first_word(string)
 end
 
 def titleize(title)
-	words = title.split(" ")
-	fixed_title = words.collect do |word|
-		case word
-			when "and","over", "the"
-				word
-			else
-				word.capitalize
-			end
-	end
-
-	fixed_title = fixed_title.join(" ")
-	fixed_title[0] = fixed_title[0].upcase
-	fixed_title
+	fixed_title = title.split(" ").collect do |word|
+		["and","over","the"].include?(word) ? word : word.capitalize
+	end.join(" ")
+	fixed_title[0].upcase + fixed_title[1..-1]
 end
