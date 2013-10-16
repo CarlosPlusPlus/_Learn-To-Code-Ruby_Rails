@@ -3,8 +3,8 @@
 problem
 
 def flatten(array)
-	return [array] if array.is_a?(Fixnum) || array.is_a?(String)
-	array.collect{|n| flatten(n) }.inject(:+)
+  return [array] if array.is_a?(Fixnum) || array.is_a?(String)
+  array.collect{|n| flatten(n) }.inject(:+)
 end
 
 puts flatten([0,[1,2],[[[3]]],4,[5,6]]).inspect
