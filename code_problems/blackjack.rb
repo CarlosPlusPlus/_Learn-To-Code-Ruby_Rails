@@ -34,7 +34,6 @@ class BlackjackSolver
 	end
 
 	def solve
-		
 	end
 
 end
