@@ -22,18 +22,35 @@ Here are a few examples:
 
 PROBLEM
 
+require 'pry-debugger'
+
 ##################
 # IMPLEMENTATION #
 ##################
 
 class BlackjackSolver
-	attr_accessor :combinations, :hand
+	attr_accessor :combinations, :input
+
+	VALUES = { "1" => 1, "2" => 2, "3" => 3, "4" => 4, "5" => 5,
+						 "6" => 6, "7" => 7, "8" => 8, "9" => 9, "10" => 10,
+						 "J" => 10,"Q" => 10,"K" => 10,"A1" => 1,"A2" => 11
+					 }
 
 	def initialize(args)
-		puts args.inspect
+		raise "Must pass in at least 2 valid cards." if args.size <= 1
+		
+		@input = args
+		@combinations = []
 	end
 
 	def solve
+		generate_combinations
+	end
+
+	private
+
+	def generate_combinations
+		
 	end
 
 end
@@ -42,4 +59,5 @@ end
 # MAIN #
 ########
 
+binding.pry
 BlackjackSolver.new(ARGV).solve
