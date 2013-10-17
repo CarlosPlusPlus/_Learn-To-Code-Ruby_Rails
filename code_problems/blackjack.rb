@@ -31,10 +31,10 @@ require 'pry-debugger'
 class BlackjackSolver
 	attr_accessor :input, :possible_hands
 
-	VALUES = { "1" => 1, "2" => 2, "3" => 3, "4" => 4, "5" => 5,
-						 "6" => 6, "7" => 7, "8" => 8, "9" => 9, "10" => 10,
-						 "J" => 10,"Q" => 10,"K" => 10,"A1" => 1,"A2" => 11
-					 }
+	@@VALUES = { "1" => 1, "2" => 2, "3" => 3, "4" => 4, "5" => 5,
+		  				 "6" => 6, "7" => 7, "8" => 8, "9" => 9, "10" => 10,
+			  			 "J" => 10,"Q" => 10,"K" => 10,"A1"=> 1, "A2"
+				  	 }
 
 	def initialize(args)
 		raise "Must pass in at least 2 valid cards." if args.size <= 1
@@ -45,9 +45,6 @@ class BlackjackSolver
 
 	def solve
 		generate_hands
-		# replace_aces
-		# reject_busts
-		# compute_best_hand
 	end
 
 	private
