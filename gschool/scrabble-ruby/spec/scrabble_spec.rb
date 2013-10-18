@@ -3,7 +3,7 @@ Bundler.require
 require './lib/scrabble'
 
 describe Scrabble do
-	
+
   describe "#score" do
     
     it "scores a single letter" do
@@ -30,23 +30,19 @@ describe Scrabble do
   describe "#higest_score_from" do
 
   	it "picks word with the highest total score" do
-  		expect ( Scrabble.highest_score_from(['home', 'word', 'hello', 'sound']) ).to eq "home"
+  		Scrabble.highest_score_from(['home', 'word', 'hello', 'sound']).should eq "home"
   	end
 
   	it "picks lowest tiled word when scores are tied" do
-  		expect ( Scrabble.highest_score_from(['hello', 'word', 'sound']) ).to eq "word"
-  	end
-
-  	it "picks lowest tiled word when scores are tied" do
-  		expect ( Scrabble.highest_score_from(['hello', 'word', 'sound']) ).to eq "word"
+  		Scrabble.highest_score_from(['hello', 'word', 'sound']).should eq "word"
   	end
 
   	it "picks word if 7 tiles are used" do
-  		expect ( Scrabble.highest_score_from(['home', 'word', 'silence']) ).to eq "silence"
+  		Scrabble.highest_score_from(['home', 'word', 'silence']).should eq "silence"
   	end
 
   	it "picks first word when words are of same length and score" do
-  		expect ( Scrabble.highest_score_from(['hi', 'word', 'ward']) ).to eq "word"
+  		Scrabble.highest_score_from(['hi', 'word', 'ward']).should eq "word"
   	end
 
   end

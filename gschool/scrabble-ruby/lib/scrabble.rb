@@ -1,4 +1,6 @@
 class Scrabble
+	
+	MAX_LENGTH = 7
 
 	SCORES = {
 						"A"=>1, "B"=>3, "C"=>3, "D"=>2, "E"=>1, "F"=>4,
@@ -12,4 +14,26 @@ class Scrabble
     return 0 if (word.nil? || word.empty?)
     word.upcase.chars.inject(0){|sum,c| sum + SCORES[c]}
   end
+
+  def self.highest_score_from(words)
+  	score_hash = Hash.new {|h,k| h[k] = [] }
+  	words.each {|word| score_hash[score(word)] << word}
+
+  	winning = score_hash.max.flatten.drop(1) 
+  	winning.size == 1 ? winning.first : find_best_word(winning)
+  end
+
+  # Helper Methods
+  private
+
+  def self.find_best_word(words)
+  	longest_length = words.max_by(&:length).length
+  	
+  	if longest_length == MAX_LENGTH
+  		words.detect {|word| word.length == MAX_LENGTH}
+  	else
+			words.sort_by(&:length).first
+		end
+  end
+
 end
