@@ -19,8 +19,8 @@ class Scrabble
   	score_hash = Hash.new {|h,k| h[k] = [] }
   	words.each {|word| score_hash[score(word)] << word}
 
-  	winning = score_hash.max.flatten.drop(1) 
-  	winning.size == 1 ? winning.first : find_best_word(winning)
+  	win_words = score_hash.max.flatten.drop(1) 
+  	win_words.size == 1 ? win_words.first : find_best_word(win_words)
   end
 
   # Helper Methods
