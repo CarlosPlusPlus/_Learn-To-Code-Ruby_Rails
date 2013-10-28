@@ -48,3 +48,15 @@ describe Scrabble do
   end
 
 end
+
+describe Player do
+
+  let(:player1) {Player.new("Frank")}
+  let(:player2) {Player.new("Katrina")}
+
+  it "should have a name" do
+    player1.name.should eq "Frank"
+    player2.name.should eq "Katrina"
+  end
+
+end
