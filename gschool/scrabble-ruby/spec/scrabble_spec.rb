@@ -59,4 +59,14 @@ describe Player do
     player2.name.should eq "Katrina"
   end
 
+  it "should keep track of score" do
+    player1.plays("hello").should eq 8
+    player2.plays("word").should eq 8
+    player1.plays("home").should eq 9
+    player2.plays("sound").should eq 6
+    player1.score.should eq 17
+    player2.score.should eq 14
+    player1.leading?(player2).should be_true
+  end
+
 end
