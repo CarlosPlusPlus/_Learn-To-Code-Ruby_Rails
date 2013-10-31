@@ -36,10 +36,18 @@ class Scrabble
 
 end
 
+########################################
+########################################
+
 class Player
   attr_accessor :name
 
   def initialize(name)
     @name = name
   end
+
+  def plays(word)
+    Scrabble.score(word)
+  end
+
 end
