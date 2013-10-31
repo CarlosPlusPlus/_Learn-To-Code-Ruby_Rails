@@ -48,7 +48,13 @@ class Player
   end
 
   def plays(word)
-    Scrabble.score(word)
+    word_score = Scrabble.score(word)
+    self.score = score + word_score
+    word_score
+  end
+
+  def leading?(other_player)
+    self.score > other_player.score
   end
 
 end
