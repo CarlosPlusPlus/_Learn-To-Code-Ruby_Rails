@@ -69,4 +69,12 @@ describe Player do
     player1.leading?(player2).should be_true
   end
 
+  it "should keep track of letters" do
+    (player1.letters = ['a']).should eq ['a']
+    (player1.add_letter('w')).should eq ['a', 'w']
+    (player1.add_letters(['i', 'n', 'd'])).should eq ['w', 'a', 'i', 'n', 'd']  
+    player1.plays("win").should eq 6
+    player1.letters.should eq ['a', 'd']
+end
+
 end
