@@ -70,10 +70,11 @@ class Player
   end
 
   def can_play?(word)
-    char_hash = word.each_char.inject(Hash.new(0)) { |h, c| h[c] += 1 ; h }
+    l =        letters.group_by { |c| c }
+    w = word.each_char.group_by { |c| c }
 
-    char_hash.all? do |letter,count|
-      letters.count { |l| l == letter } >= count
+    w.each_key.all? do |letter|
+      l[letter] && w[letter].size <= l[letter].size
     end
   end
 
