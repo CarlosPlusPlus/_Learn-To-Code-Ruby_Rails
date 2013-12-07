@@ -69,4 +69,12 @@ class Player
     (self.letters).concat(letters)
   end
 
+  def can_play?(word)
+    char_hash = word.each_char.inject(Hash.new(0)) { |h, c| h[c] += 1 ; h }
+
+    char_hash.all? do |letter,count|
+      letters.count { |l| l == letter } >= count
+    end
+  end
+
 end
