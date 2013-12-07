@@ -59,15 +59,11 @@ class Player
     word_score
   end
 
-  protected
-
   def leading?(other_player)
     score > other_player.score
   end
 
 end
-
-
 
 <<-old
 
