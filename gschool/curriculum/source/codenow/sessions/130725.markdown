@@ -1,0 +1,23 @@
+---
+layout: page
+title: Thursday, July 25
+sidebar: true
+---
+
+## Daily Outline
+ 
+* Exercism
+* Digging into an Exercise
+* Adding Stats to Blogger
+
+## Digging into an Exercise
+
+Steve will "pair program" with a student from the class to solve one of the warmup exercises.
+
+## Adding Stats to Blogger
+
+Our Blogger app is getting pretty fancy. Thanks to your work with Exercism, you're getting a feel for how to use Test-Driven Development.
+
+Let's now combine the TDD process with Rails and add a statistics dashboard to our Blogger:
+
+http://tutorials.jumpstartlab.com/topics/blogger/stats_dashboard.html

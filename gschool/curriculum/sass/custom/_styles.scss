@@ -1,0 +1,229 @@
+// This File is imported last, and will override other styles in the cascade
+// Add styles here to make changes without digging in too much
+
+//ul, ol { &, ul, ol { margin-left: 3em; }}
+$max-w: 920px;
+main { max-width: $max-w; margin: 0 auto; }
+body > footer,
+body > nav ul.main-navigation {
+  margin: 0 auto !important;
+  padding-left: $pad-min;
+  padding-right: $pad-min;
+  @media only screen and (min-width: 480px) {
+    padding-left: $pad-narrow;
+    padding-right: $pad-narrow;
+  }
+  @media only screen and (min-width: 768px) {
+    padding-left: $pad-medium;
+    padding-right: $pad-medium;
+    max-width: $max-w - $pad-medium*2;
+  }
+  @media only screen and (min-width: 992px) {
+    padding-left: $pad-wide;
+    padding-right: $pad-wide;
+    max-width: $max-w - $pad-wide*2;
+  }
+}
+html { background: $noise-bg $main-bg; }
+body > nav {
+  padding: 0 !important;
+  ul.main-navigation {
+    display: block;
+    padding: {top: .4em; bottom: .4em;}
+    a {
+      float: left;
+      text-decoration: none;
+      font-size: 1.1em;
+      padding: .1em 0;
+      line-height: 1.5em;
+    }
+  }
+  a[href='/']{
+    @include replace-text-with-dimensions('logo.png');
+    height: image-height('logo.png')/2;
+    background-position: top;
+    padding: 0 !important;
+    margin: 0 !important;
+    &:hover { background-position: bottom; }
+  }
+  z-index: 100;
+  @include box-shadow(rgba(#000, .1) 0 1px 1px);
+  background: #fff; border: 0;// { left: #eee 1px solid; right: #eee 1px solid; bottom: 0; }
+}
+figure.code, pre {
+  border: 1px solid #e5e5e5;
+  @include box-shadow(rgba(#000, .06) 0 0 10px);
+  div.highlight {
+    pre { border: 0; @include box-shadow(none); }
+    border: 0;
+    code { border: none !important; }
+  }
+
+}
+body > footer { background: none; }
+body > header,
+body > nav .subscription,
+body > nav form,
+figure.code figcaption,
+{
+  display: none;
+}
+
+ul.main-navigation { list-style-type: none; }
+
+#content {
+  border: none;
+  overflow: visible;
+  margin: 0;
+}
+
+#main #content article { background: #F8F8F8 $noise-bg; }
+#content > div { padding: 0; }
+
+.opinion, .note {
+  position: relative;
+  padding: 2.2em .8em .6em;
+  margin-bottom: 1.5em;
+  background: #fff;
+  color: #666;
+  font-size: .9em;
+  @include box-shadow(rgba(#000, .06) 0 0 10px);
+  *:last-child { margin-bottom: 0; }
+}
+
+.opinion:before, .note:before {
+  text-shadow: #fff 0 1px;
+  font-size: .7em;
+  background: #fafafa;
+  border-bottom: 1px solid #eee;
+  padding: .1em 1em;
+  position: absolute; top: 0; left: 0; right: 0;
+  text-transform: uppercase;
+  color: $text-color-light;
+}
+.opinion {
+  border-left: 3px solid lighten(#268bd7, 15%);
+  &:before { content: "Opinion"; }
+}
+
+.note {
+  border-left: 3px solid adjust-color(#268bd7, $hue: -155, $lightness: 15%);
+  &:before { content: "Note"; }
+}
+
+.slide-out-div {
+  padding: 20px;
+  width: 250px;
+  background: #EEE;
+  border: 5px solid #FFF;
+  font-size: 90%;
+  line-height: 120%;
+}
+.slide-out-div li{
+  margin: 5px;
+}
+
+@media only screen
+and (max-width : 1024px) {
+  .slide-out-div {
+    visibility:hidden;
+  }
+}
+
+
+table.table {
+  width: 100%;
+  margin: 12px 0;
+
+  tr:first-child {
+    border-top: 0;
+  }
+  tr {
+    border-top: 1px solid #a0a0a0;
+  }
+  th {
+    font-weight: bold;
+  }
+  th, td {
+    padding: 6px 0;
+  }
+}
+
+div.section {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC') bottom left repeat-x;
+  margin-bottom: 25px;
+}
+
+@media only screen and (min-width: 500px) {
+  div.section {
+    .prime {
+      width: 180px;
+      margin-right: 20px;
+      float: left;
+      line-height: 40px;
+    }
+    .second {
+      min-width: 300px;
+      float: left;
+      width: 60%;
+    }
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+  div.section {
+    .prime {
+      float: none;
+      width: auto;
+      min-width: 0px;
+    }
+    .second {
+      float: none;
+      width: auto;
+      min-width: 0px;
+    }
+  }
+}
+
+aside div { margin: 40px 10px 0px 0px; width: 200px; }
+aside div.fixed { position: fixed;  }
+
+aside section {
+  padding: 4px;
+}
+
+aside section:first-child {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAABCAYAAACsXeyTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAFUlEQVQIHWNIS0sr/v//PwMMDzY+ADqMahlW4J91AAAAAElFTkSuQmCC') bottom left repeat-x;
+  padding-bottom: 10px;
+}
+
+@media only screen {
+  #content.sidebar-present { margin-right: 240px; }
+  #content.sidebar-present { border-right: 1px solid #E0E0E0; }
+}
+
+.download {
+  position: relative;
+  background-color: #CCC;
+  border: 1px solid #e5e5e5;
+  padding: 10px;
+  border-radius: 5px;
+  @include box-shadow(rgba(#000, .06) 0 0 10px);
+
+  img {
+    position: absolute; top: -10px; left: -21px;
+    border: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+  }
+  div.title {
+    margin-left: 30px;
+  }
+  .description {
+    margin-left: 30px;
+    font-size: 14px;
+  }
+
+}
+
+footer { clear: both; }
