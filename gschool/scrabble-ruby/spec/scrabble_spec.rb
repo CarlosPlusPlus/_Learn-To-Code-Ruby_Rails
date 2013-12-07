@@ -89,5 +89,14 @@ describe Player do
     player1.add_letters('n','d','x','f')
     player1.letters.should eq (['a', 'w', 'i', 'n', 'd', 'x', 'f'])
   end
+
+  it "should check words" do
+    player1.letters = ['f', 'l', 'i', 'e', 'x', 'j']
+    player1.letters.should eq ['f', 'l', 'i', 'e', 'x', 'j']
+
+    player1.can_play?("file").should be_true
+    player1.can_play?("fly").should  be_false
+    player1.can_play?("fill").should be_false
+  end
   
 end
