@@ -25,7 +25,14 @@ describe Player do
   end
 
   it "should keep track of letters" do
-    
+    player1.letters.should eq []
+
+    player1.add_letters('a')
+    player1.add_letters('w','i')
+    player1.letters.should eq (['a','w','i'])
+
+    player1.add_letters('n','d','x','f')
+    player1.letters.should eq (['w', 'a', 'i', 'n', 'd', 'x', 'f'])
   end
   
 end
