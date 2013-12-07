@@ -87,7 +87,7 @@ describe Player do
     player1.letters.should eq (['a','w','i'])
 
     player1.add_letters('n','d','x','f')
-    player1.letters.should eq (['w', 'a', 'i', 'n', 'd', 'x', 'f'])
+    player1.letters.should eq (['a', 'w', 'i', 'n', 'd', 'x', 'f'])
   end
   
 end

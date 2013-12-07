@@ -50,8 +50,9 @@ class Player
   attr_accessor :letters, :name, :score
 
   def initialize(name)
-    @name  = name
-    @score = 0
+    @letters = []
+    @name    = name
+    @score   = 0
   end
 
   def plays(word)
@@ -63,5 +64,9 @@ class Player
   def leading?(other_player)
     score > other_player.score
   end
-  
+
+  def add_letters(*letters)
+    (self.letters).concat(letters)
+  end
+
 end
