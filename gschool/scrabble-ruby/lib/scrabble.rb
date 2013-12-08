@@ -55,16 +55,6 @@ class Player
     @score   = 0
   end
 
-  def plays(word)
-    word_score = Scrabble.score(word)
-    self.score = score + word_score
-    word_score
-  end
-
-  def leading?(other_player)
-    score > other_player.score
-  end
-
   def add_letters(*letters)
     (self.letters).concat(letters)
   end
@@ -76,6 +66,16 @@ class Player
     w.each_key.all? do |letter|
       l[letter] && w[letter].size <= l[letter].size
     end
+  end
+
+  def plays(word)
+    word_score = Scrabble.score(word)
+    self.score = score + word_score
+    word_score
+  end
+
+  def leading?(other_player)
+    score > other_player.score
   end
 
 end
