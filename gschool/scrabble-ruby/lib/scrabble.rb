@@ -49,7 +49,7 @@ class Player
 
   attr_accessor :letters, :name, :score
 
-  def initialize(name)
+  def initialize(name="John")
     @letters = []
     @name    = name
     @score   = 0
