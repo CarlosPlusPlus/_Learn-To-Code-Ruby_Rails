@@ -25,3 +25,38 @@ Or a bit more fun:
 
 INSTRUCTIONS
 
+###############################
+# Module // Class Definitions #
+###############################
+
+module Lexicon
+	
+	class Word
+	end
+
+	class Dictionary
+	end
+
+end
+
+module WordPathSolver
+	extend self
+
+	def run(argv)
+		validate_input(argv)
+	end
+
+	private
+
+	def validate_input(argv)
+		puts "In validate_input!"
+		puts argv.inspect
+	end
+
+end
+
+############
+# Solution #
+############
+
+WordPathSolver.run(ARGV)
