@@ -1,3 +1,6 @@
+#!/usr/bin/env ruby
+require 'pry-debugger'
+
 <<-INSTRUCTIONS
 
 Sneaking from Word to Word
@@ -21,3 +24,4 @@ Or a bit more fun:
 										   thanker, thinker, thinner, twinner, twinter, twister)
 
 INSTRUCTIONS
+
