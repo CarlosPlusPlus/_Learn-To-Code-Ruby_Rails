@@ -50,13 +50,13 @@ class Integer
 end
 
 def triangle_numbers(option)
-  (1..Float::INFINITY).inject(0) do |sum, n|
-    sum += n
-    return n if sum.send("factors_#{option}").count > 500
-    sum
+  (1..Float::INFINITY).inject(0) do |triangle, n|
+    triangle += n
+    return triangle if triangle.send("factors_#{option}").count > 500
+    triangle
   end
 end
 
 # puts "Triangle Number Solution with SOLN 1 = #{triangle_numbers(1)}"
-# puts "Triangle Number Solution with SOLN 1 = #{triangle_numbers(2)}"
-puts "Triangle Number Solution with SOLN 1 = #{triangle_numbers(3)}"
+  puts "Triangle Number Solution with SOLN 2 = #{triangle_numbers(2)}"
+# puts "Triangle Number Solution with SOLN 3 = #{triangle_numbers(3)}"
