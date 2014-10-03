@@ -45,7 +45,7 @@ require 'prime'
 # Using Ruby's built in prime class.
 class Integer
   def factors_3
-    Prime.prime_division(self).uniq
+    Prime.prime_division(self).flatten.sort.uniq
   end
 end
 
