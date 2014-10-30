@@ -8,7 +8,7 @@ end
 # Return maximum palindrome for 3 digit #s.
 def find_max_palindrome
   max_palindrome = 0
-  
+
   (100..999).each do |i|
       (i..999).each do |j|
         prod = i*j

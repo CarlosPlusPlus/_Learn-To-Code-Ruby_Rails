@@ -3,7 +3,7 @@
 
 # Compute product in a string of size seq_size.
 def compute_product(product_string)
-	product_string.split("").collect{|char| char.to_i}.inject(:*)
+  product_string.split('').collect{ |char| char.to_i }.inject(:*)
 end
 
 max_prod = 0
@@ -13,8 +13,8 @@ long_int = 731671765313306249192251196744265747423553491949349698352031277450632
 long_str = long_int.to_s
 
 (0..(long_str.size - seq_size)).each do |seq_index|
-	product  =  compute_product(long_str[seq_index,seq_size])
-	max_prod =  product if product > max_prod
+  product  =  compute_product(long_str[seq_index,seq_size])
+  max_prod =  product if product > max_prod
 end
 
 puts "Maximum product is: #{max_prod}"
