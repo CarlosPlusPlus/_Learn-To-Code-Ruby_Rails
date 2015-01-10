@@ -25,6 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'active_model_serializers'
 gem 'ffaker'
+gem 'react-rails'
 gem 'responders', '~> 2.0'
 
 # Use ActiveModel has_secure_password
