@@ -27,14 +27,38 @@ var CommentList = React.createClass({
   }
 });
 
-var ready = function () {
-  var fakeComments = [
-    { author:"Richard", comment:"This is a comment" },
-    { author:"Nils", comment:"This is another comment" }
-  ];
+var CommentBox = React.createClass({
+  getInitialState: function () {
+    return {comments: []};
+  },
+  componentDidMount: function () {
+    this.loadCommentsFromServer();
+  },
+  loadCommentsFromServer: function () {
+    $.ajax({
+      url: this.props.url,
+      dataType: 'json',
+      success: function (comments) {
+        this.setState({comments: comments});
+      }.bind(this),
+      error: function (xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
+  render: function () {
+    return (
+      <div className="commentBox">
+        <h1>Comments</h1>
+        <CommentList comments={this.state.comments} />
+      </div>
+      );
+  }
+});
 
+var ready = function () {
   React.renderComponent(
-    <CommentList comments={fakeComments} />,
+    <CommentBox url="/comments.json" />,
     document.getElementById('comments')
   );
 };
