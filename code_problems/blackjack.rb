@@ -29,29 +29,29 @@ require 'pry-debugger'
 ##################
 
 class BlackjackSolver
-	attr_accessor :input, :possible_hands
+  attr_accessor :input, :possible_hands
 
-	@@VALUES = { "1" => 1, "2" => 2, "3" => 3, "4" => 4, "5" => 5,
-		  				 "6" => 6, "7" => 7, "8" => 8, "9" => 9, "10" => 10,
-			  			 "J" => 10,"Q" => 10,"K" => 10,"A1"=> 1, "A2"
-				  	 }
+  @@VALUES = { '1' => 1, '2' => 2, '3' => 3, '4' => 4, '5' => 5,
+				       '6' => 6, '7' => 7, '8' => 8, '9' => 9, '10' => 10,
+				       'J' => 10,'Q' => 10,'K' => 10,'A1'=> 1, 'A2'
+       }
 
-	def initialize(args)
-		raise "Must pass in at least 2 valid cards." if args.size <= 1
-		
-		@input = args
-		@possible_hands = []
-	end
+  def initialize(args)
+  raise 'Must pass in at least 2 valid cards.' if args.size <= 1
 
-	def solve
-		generate_hands
-	end
+  @input = args
+  @possible_hands = []
+  end
 
-	private
+  def solve
+  generate_hands
+  end
 
-	def generate_hands
-		(2..input.size).each { |n| possible_hands.concat(input.combination(n).to_a.uniq) }
-	end
+  private
+
+  def generate_hands
+  (2..input.size).each { |n| possible_hands.concat(input.combination(n).to_a.uniq) }
+  end
 
 end
 

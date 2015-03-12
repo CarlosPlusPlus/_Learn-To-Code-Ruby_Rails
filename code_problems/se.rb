@@ -2,27 +2,27 @@ require 'json'
 require 'nokogiri'
 require 'watir-scroll'
 require 'watir-webdriver'
- 
-class Listing 
+
+class Listing
   attr_reader :link
- 
+
   def initialize(link)
     @link = link
-  end  
- 
+  end
+
   def price
     @price ||= link.at_css('h6')
-               .content.gsub(/[^0-9]/, "" ).to_i
+               .content.gsub(/[^0-9]/, '' ).to_i
   end
- 
+
   def attributes
-    @attributes ||= { :listing_class => listing_class, 
+    @attributes ||= { :listing_class => listing_class,
                       :address => address,
                       :unit => unit,
-                      :url => "http://streeteasy.com" + url,
+                      :url => 'http://streeteasy.com' + url,
                       :price => price }
   end
- 
+
   private
 
   def url
@@ -33,24 +33,24 @@ class Listing
     @address ||= if is_townhouse?
         generatic_address
       else
-        generatic_address.split(" ")[0...-1].join(" ")
+        generatic_address.split(' ')[0...-1].join(' ')
       end
   end
 
   def unit
     @unit ||= if is_townhouse? || is_rental?
-        ""
+        ''
       else
-        generatic_address.split(" ").last.gsub("#", "")
+        generatic_address.split(' ').last.gsub('#', '')
       end
   end
 
   def listing_class
-    @listing_class ||= url.split("/")[2]
+    @listing_class ||= url.split('/')[2]
   end
 
   def is_townhouse?
-    url.split("/").last.split("-")[1] == "townhouse"
+    url.split('/').last.split('-')[1] == 'townhouse'
   end
 
   def generatic_address
@@ -58,7 +58,7 @@ class Listing
   end
 
   def is_rental?
-    url.split("/")[2] == "rental"
+    url.split('/')[2] == 'rental'
   end
 end
 
@@ -66,7 +66,7 @@ class StreetEasyScraper
   attr_reader :amount, :browser, :links, :listings, :top_listings, :type
 
   def initialize(browser, amount = 20)
-    @type     = browser["rent"] || "sale"
+    @type     = browser['rent'] || 'sale'
     @amount   = amount
 
     @browser  = Watir::Browser.start(browser)
@@ -83,7 +83,7 @@ class StreetEasyScraper
       file.write(top_listings.to_json)
     end
   end
-    
+
   private
 
   def get_links
@@ -109,10 +109,10 @@ end
 # Solution #
 ############
 
-rent = StreetEasyScraper.new("http://streeteasy.com/nyc/for-rent/soho")
+rent = StreetEasyScraper.new('http://streeteasy.com/nyc/for-rent/soho')
 rent.scrape
 rent.to_json
 
-sale = StreetEasyScraper.new("http://streeteasy.com/nyc/for-sale/soho")
+sale = StreetEasyScraper.new('http://streeteasy.com/nyc/for-sale/soho')
 sale.scrape
 sale.to_json
