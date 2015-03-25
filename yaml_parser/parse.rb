@@ -34,21 +34,21 @@ describe 'YamlParser' do
 
   context 'with first level keys' do
     it 'handles [] notation' do
-      expect( @data['tax'] ).to eq(251.42)
+      expect(@data['tax']).to eq(251.42)
     end
 
     it 'handles . notiation' do
-      expect( @data.tax ).to eq(251.42)
+      expect(@data.tax).to eq(251.42)
     end
   end
 
   context 'with nested keys' do
     it 'handles [] notation' do
-      expect( @data['product'].first['sku'] ).to eq('BL394D')
+      expect(@data['product'].first['sku']).to eq('BL394D')
     end
 
     it 'handles . notiation' do
-      expect( @data.product.first.sku ).to eq('BL394D')
+      expect(@data.product.first.sku).to eq('BL394D')
     end
   end
 end
