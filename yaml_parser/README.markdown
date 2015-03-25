@@ -9,18 +9,3 @@ Your parsing code should return an object that allows you to access attributes u
 The returned object should also allow you to access attributes using method calls:
 
     data.product.first.sku => "BL394D"
-
-========
-
-Thought Process:
-
-- Look at all keys in YAML Hash.
-
-- For each value that maps to each key:
-	> If Array
-
-	> If Hash
-	> If (Integer | String | etc.)
-
-
-Redefine method missing -> 1 argument
