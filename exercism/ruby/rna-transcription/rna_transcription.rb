@@ -6,7 +6,7 @@ class Complement
     [:dna, :rna].each do |type|
       define_method("of_#{type}") do |strand|
         map = const_get("#{type.upcase}_MAP")
-        strand.split('').collect { |n| map[n] || (raise ArgumentError) }.join
+        strand.chars.collect { |n| map[n] || (raise ArgumentError) }.join
       end
     end
   end
