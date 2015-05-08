@@ -3,7 +3,7 @@
 
 # Compute product in a string of size seq_size.
 def compute_product(product_string)
-  product_string.split('').collect{ |char| char.to_i }.inject(:*)
+  product_string.chars.map(&:to_i).inject(:*)
 end
 
 max_prod = 0
